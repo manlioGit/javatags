@@ -1,4 +1,4 @@
-package com.mm.javatags.element;
+package com.github.manliogit.javatags.element;
 
 public class Text implements Element {
 

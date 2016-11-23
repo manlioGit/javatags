@@ -1,13 +1,13 @@
-package com.mm.javatags.lang;
+package com.github.manliogit.javatags.lang;
 
 import java.util.List;
 
-import com.mm.javatags.element.Group;
-import com.mm.javatags.element.NonVoid;
-import com.mm.javatags.element.Element;
-import com.mm.javatags.element.Text;
-import com.mm.javatags.element.Void;
-import com.mm.javatags.element.attribute.Attribute;
+import com.github.manliogit.javatags.element.Element;
+import com.github.manliogit.javatags.element.Group;
+import com.github.manliogit.javatags.element.NonVoid;
+import com.github.manliogit.javatags.element.Text;
+import com.github.manliogit.javatags.element.Void;
+import com.github.manliogit.javatags.element.attribute.Attribute;
 
 public class HtmlHelper {
 	

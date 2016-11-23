@@ -1,6 +1,6 @@
-package com.mm.javatags.element;
+package com.github.manliogit.javatags.element;
 
-import com.mm.javatags.element.attribute.Attribute;
+import com.github.manliogit.javatags.element.attribute.Attribute;
 
 public class Void implements Element {
 

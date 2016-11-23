@@ -1,15 +1,15 @@
-package com.mm.javatags.element;
+package com.github.manliogit.javatags.element;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.mm.javatags.element.Group;
-import com.mm.javatags.element.NonVoid;
-import com.mm.javatags.element.Text;
-import com.mm.javatags.element.Void;
-import com.mm.javatags.element.attribute.Attribute;
+import com.github.manliogit.javatags.element.Group;
+import com.github.manliogit.javatags.element.NonVoid;
+import com.github.manliogit.javatags.element.Text;
+import com.github.manliogit.javatags.element.Void;
+import com.github.manliogit.javatags.element.attribute.Attribute;
 
 public class ElementTest {
 

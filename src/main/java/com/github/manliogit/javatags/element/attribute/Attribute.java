@@ -1,4 +1,4 @@
-package com.mm.javatags.element.attribute;
+package com.github.manliogit.javatags.element.attribute;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

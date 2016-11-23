@@ -1,20 +1,20 @@
-package com.mm.javatags.lang;
+package com.github.manliogit.javatags.lang;
 
-import static com.mm.javatags.lang.HtmlHelper.attr;
-import static com.mm.javatags.lang.HtmlHelper.br;
-import static com.mm.javatags.lang.HtmlHelper.div;
-import static com.mm.javatags.lang.HtmlHelper.head;
-import static com.mm.javatags.lang.HtmlHelper.html;
-import static com.mm.javatags.lang.HtmlHelper.link;
-import static com.mm.javatags.lang.HtmlHelper.meta;
-import static com.mm.javatags.lang.HtmlHelper.text;
-import static com.mm.javatags.lang.HtmlHelper.title;
+import static com.github.manliogit.javatags.lang.HtmlHelper.attr;
+import static com.github.manliogit.javatags.lang.HtmlHelper.br;
+import static com.github.manliogit.javatags.lang.HtmlHelper.div;
+import static com.github.manliogit.javatags.lang.HtmlHelper.head;
+import static com.github.manliogit.javatags.lang.HtmlHelper.html;
+import static com.github.manliogit.javatags.lang.HtmlHelper.link;
+import static com.github.manliogit.javatags.lang.HtmlHelper.meta;
+import static com.github.manliogit.javatags.lang.HtmlHelper.text;
+import static com.github.manliogit.javatags.lang.HtmlHelper.title;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.mm.javatags.element.Element;
+import com.github.manliogit.javatags.element.Element;
 
 public class HtmlHelperTest {
  
