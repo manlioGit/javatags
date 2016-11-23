@@ -1,5 +1,7 @@
 package lang;
 
+import java.util.List;
+
 import tag.GroupTag;
 import tag.NonVoid;
 import tag.Tag;
@@ -15,6 +17,14 @@ public class HtmlHelper {
 	
 	public static Tag nonVoid(String name, Tag ... tag){
 		return new NonVoid(name, tag);
+	}
+	
+	public static Tag nonVoid(String name, Attribute attr, Iterable<Tag> tags){
+		return new NonVoid(name, attr, tags);
+	}
+	
+	public static Tag nonVoid(String name, Iterable<Tag> tags){
+		return new NonVoid(name, tags);
 	}
 	
 	public static Tag voidEl(String name, Attribute attr){
@@ -63,6 +73,10 @@ public class HtmlHelper {
 	
 	public static Tag div(Tag...tag){
 		return nonVoid("div", tag);
+	}
+	
+	public static Tag div(List<Tag> tags){
+		return nonVoid("div", tags);
 	}
 	
 	public static Tag div(Attribute attr, Tag ... tag){
