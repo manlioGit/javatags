@@ -1,4 +1,4 @@
-package tag.attribute;
+package com.mm.javatags.element.attribute;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

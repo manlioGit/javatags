@@ -1,10 +1,10 @@
-package tag;
+package com.mm.javatags.element;
 
-public class TextTag implements Tag {
+public class Text implements Element {
 
 	private String _text;
 
-	public TextTag(String text) {
+	public Text(String text) {
 		_text = text;
 	}
 	

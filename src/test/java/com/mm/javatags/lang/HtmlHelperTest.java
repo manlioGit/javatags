@@ -1,20 +1,20 @@
-package lang;
+package com.mm.javatags.lang;
 
-import static lang.HtmlHelper.attr;
-import static lang.HtmlHelper.br;
-import static lang.HtmlHelper.div;
-import static lang.HtmlHelper.head;
-import static lang.HtmlHelper.html;
-import static lang.HtmlHelper.link;
-import static lang.HtmlHelper.meta;
-import static lang.HtmlHelper.text;
-import static lang.HtmlHelper.title;
+import static com.mm.javatags.lang.HtmlHelper.attr;
+import static com.mm.javatags.lang.HtmlHelper.br;
+import static com.mm.javatags.lang.HtmlHelper.div;
+import static com.mm.javatags.lang.HtmlHelper.head;
+import static com.mm.javatags.lang.HtmlHelper.html;
+import static com.mm.javatags.lang.HtmlHelper.link;
+import static com.mm.javatags.lang.HtmlHelper.meta;
+import static com.mm.javatags.lang.HtmlHelper.text;
+import static com.mm.javatags.lang.HtmlHelper.title;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import tag.Tag;
+import com.mm.javatags.element.Element;
 
 public class HtmlHelperTest {
  
@@ -26,7 +26,7 @@ public class HtmlHelperTest {
 	@Test
 	public void testName() throws Exception {
 			
-		Tag fragment = html(attr("class -> fa fa-up","id -> 123"),
+		Element fragment = html(attr("class -> fa fa-up","id -> 123"),
 				   		  div("xxx")
 					   );
 		
@@ -35,12 +35,12 @@ public class HtmlHelperTest {
 	
 	@Test
 	public void renderTextAsLastSibling() throws Exception {
-		Tag frag = div(
+		Element frag = div(
 				   	  div(),
 				   	  "text"
 				   );
 		
-		Tag frag2 = div(
+		Element frag2 = div(
 				div(),
 				div(),
 				text("text")
@@ -57,7 +57,7 @@ public class HtmlHelperTest {
 	
 	@Test
 	public void nested() throws Exception {
-		Tag frag = html(
+		Element frag = html(
 						div(attr("class -> fa fa-up"),
 							div(attr("id -> 123"), "some text")
 						),
@@ -82,7 +82,7 @@ public class HtmlHelperTest {
 	
 	@Test
 	public void headBlock() throws Exception {
-		Tag frag = html(attr("lang -> en"),
+		Element frag = html(attr("lang -> en"),
 						head(
 							meta(attr("http-equiv -> Content-Type", "content -> text/html; charset=UTF-8")),
 							title("title"),

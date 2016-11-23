@@ -1,8 +1,8 @@
-package tag;
+package com.mm.javatags.element;
 
-import tag.attribute.Attribute;
+import com.mm.javatags.element.attribute.Attribute;
 
-public class Void implements Tag {
+public class Void implements Element {
 
 	private final String _name;
 	private final Attribute _attribute;

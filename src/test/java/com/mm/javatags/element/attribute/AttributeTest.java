@@ -1,10 +1,12 @@
-package tag.attribute;
+package com.mm.javatags.element.attribute;
 
-import static lang.HtmlHelper.attr;
+import static com.mm.javatags.lang.HtmlHelper.attr;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
+
+import com.mm.javatags.element.attribute.Attribute;
 
 public class AttributeTest {
 
