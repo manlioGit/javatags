@@ -165,12 +165,20 @@ public class HtmlHelper {
 		return nonVoid("li", attribute, tag);
 	}
 	
+	public static Tag li(Tag...tag){
+		return nonVoid("li", tag);
+	}
+	
 	public static Tag i(Attribute attribute, Tag...tag){
-		return nonVoid("li", attribute, tag);
+		return nonVoid("i", attribute, tag);
 	}
 	
 	public static Tag nav(Attribute attribute, Tag...tag){
 		return nonVoid("nav", attribute, tag);
+	}
+	
+	public static Tag nav(Tag...tag){
+		return nonVoid("nav", tag);
 	}
 	
 	public static Tag button(Attribute attribute, String text){
@@ -181,8 +189,16 @@ public class HtmlHelper {
 		return nonVoid("footer", attribute, tag);
 	}
 	
+	public static Tag footer(Tag...tag){
+		return nonVoid("footer", tag);
+	}
+	
 	public static Tag script(Attribute attribute, Tag...tag){
 		return nonVoid("script", attribute, tag);
+	}
+	
+	public static Tag input(Attribute attribute){
+		return voidEl("input", attribute);
 	}
 	
 	public static Attribute attr(String...comp){
