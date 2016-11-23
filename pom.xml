@@ -5,7 +5,31 @@
 	<artifactId>javatags</artifactId>
 	<version>0.1</version>
 
+	<name>${project.groupId}:${project.artifactId}</name>
+	<description>JavaTags is a small XML/HTML construction library for Java inspired by lihaoyi's ScalaTags. .</description>
+	<url>https://github.com/manlioGit/javatags</url>
 	<packaging>jar</packaging>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Manlio Modugno</name>
+			<email>manliomodugno@gmail.com</email>
+			<organizationUrl>https://github.com/manlioGit</organizationUrl>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/manlioGit/javatags.git</connection>
+		<developerConnection>scm:git:https://github.com/manlioGit/javatags.git</developerConnection>
+		<url>https://github.com/manlioGit/javatags</url>
+	</scm>
 
 	<dependencies>
 		<dependency>
