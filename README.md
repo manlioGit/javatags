@@ -19,8 +19,8 @@ renders to:
     <!DOCTYPE html>
      <html lang='en'>
       <head>
-      <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
+      <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
       <title>title</title>
-      <link href='xxx.css' rel='stylesheet'>
+      <link href='xxx.css' rel='stylesheet'/>
      </head>
     </html>
