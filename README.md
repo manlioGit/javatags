@@ -44,11 +44,11 @@ is rendered as:
     </html>
     
 
-### bootstrap example [Gentelella Theme](https://github.com/puikinsh/gentelella) :
+### bootstrap [Gentelella Theme](https://github.com/puikinsh/gentelella) :
 
 Fragment like:
 
-	html(attr("lang -> en"),
+	html5(attr("lang -> en"),
 	    head(
 	        meta( attr("http-equiv -> Content-Type", "content -> text/html; charset=UTF-8")),
 	        meta( attr("http-equiv -> X-UA-Compatible", "content -> IE=edge")),
