@@ -6,7 +6,7 @@ JavaTags is a small XML/HTML construction library for Java inspired by [lihaoyi'
 
 Fragment like:
 
-    html(attr("lang -> en"),
+    html5(attr("lang -> en"),
       head(
         meta(attr("http-equiv -> Content-Type", "content -> text/html; charset=UTF-8")),
         title("title"),
