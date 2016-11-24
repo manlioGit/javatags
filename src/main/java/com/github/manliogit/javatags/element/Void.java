@@ -18,7 +18,7 @@ public class Void implements Element {
 	
 	@Override
 	public String render() {
-		return "<" + tagContent() + ">";
+		return "<" + tagContent() + "/>";
 	}
 	
 	private String tagContent(){

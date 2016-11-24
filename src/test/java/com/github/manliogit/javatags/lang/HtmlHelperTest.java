@@ -4,7 +4,7 @@ import static com.github.manliogit.javatags.lang.HtmlHelper.attr;
 import static com.github.manliogit.javatags.lang.HtmlHelper.br;
 import static com.github.manliogit.javatags.lang.HtmlHelper.div;
 import static com.github.manliogit.javatags.lang.HtmlHelper.head;
-import static com.github.manliogit.javatags.lang.HtmlHelper.html;
+import static com.github.manliogit.javatags.lang.HtmlHelper.html5;
 import static com.github.manliogit.javatags.lang.HtmlHelper.link;
 import static com.github.manliogit.javatags.lang.HtmlHelper.meta;
 import static com.github.manliogit.javatags.lang.HtmlHelper.text;
@@ -20,17 +20,7 @@ public class HtmlHelperTest {
  
 	@Test
 	public void htmlTagRenderDocTypeAlso() throws Exception {
-		assertThat(html().render(), is("<!DOCTYPE html><html></html>"));
-	}
-	
-	@Test
-	public void testName() throws Exception {
-			
-		Element fragment = html(attr("class -> fa fa-up","id -> 123"),
-				   		  div("xxx")
-					   );
-		
-		assertThat(fragment.render(), is("<!DOCTYPE html><html class='fa fa-up' id='123'><div>xxx</div></html>"));
+		assertThat(html5().render(), is("<!DOCTYPE html><html></html>"));
 	}
 	
 	@Test
@@ -57,7 +47,7 @@ public class HtmlHelperTest {
 	
 	@Test
 	public void nested() throws Exception {
-		Element frag = html(
+		Element frag = html5(
 						div(attr("class -> fa fa-up"),
 							div(attr("id -> 123"), "some text")
 						),
@@ -73,7 +63,7 @@ public class HtmlHelperTest {
 						+ 		"<div id='123'>some text</div>"
 						+ 	"</div>"
 						+ 	"<div>"
-						+ 		"<br>otherText"
+						+ 		"<br/>otherText"
 						+ 	"</div>"
 						+ "</html>";
 		
@@ -82,7 +72,7 @@ public class HtmlHelperTest {
 	
 	@Test
 	public void headBlock() throws Exception {
-		Element frag = html(attr("lang -> en"),
+		Element frag = html5(attr("lang -> en"),
 						head(
 							meta(attr("http-equiv -> Content-Type", "content -> text/html; charset=UTF-8")),
 							title("title"),
@@ -93,9 +83,9 @@ public class HtmlHelperTest {
 		String expected = "<!DOCTYPE html>"+
 							"<html lang='en'>" +
 								"<head>"+
-								    "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>" +
+								    "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>" +
 								    "<title>title</title>" +
-								    "<link href='xxx.css' rel='stylesheet'>"+
+								    "<link href='xxx.css' rel='stylesheet'/>"+
 								"</head>" +
 						    "</html>";
 		

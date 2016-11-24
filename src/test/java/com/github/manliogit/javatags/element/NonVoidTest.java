@@ -11,7 +11,7 @@ import com.github.manliogit.javatags.element.Text;
 import com.github.manliogit.javatags.element.Void;
 import com.github.manliogit.javatags.element.attribute.Attribute;
 
-public class ElementTest {
+public class NonVoidTest {
 
 	@Test
 	public void simpleTag() {
@@ -55,6 +55,6 @@ public class ElementTest {
 	
 	@Test
 	public void siblingTags() throws Exception {
-		assertThat(new Group(new Void("!DOCTYPE html"), new NonVoid("html")).render(), is("<!DOCTYPE html><html></html>"));
+		assertThat(new Group(new Text("<!DOCTYPE html>"), new NonVoid("html")).render(), is("<!DOCTYPE html><html></html>"));
 	}
 }
