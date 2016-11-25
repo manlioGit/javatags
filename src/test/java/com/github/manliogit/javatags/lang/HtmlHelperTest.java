@@ -1,8 +1,18 @@
 package com.github.manliogit.javatags.lang;
 
-import static com.github.manliogit.javatags.lang.HtmlHelper.*;
+import static com.github.manliogit.javatags.lang.HtmlHelper.a;
+import static com.github.manliogit.javatags.lang.HtmlHelper.attr;
+import static com.github.manliogit.javatags.lang.HtmlHelper.br;
+import static com.github.manliogit.javatags.lang.HtmlHelper.div;
+import static com.github.manliogit.javatags.lang.HtmlHelper.head;
+import static com.github.manliogit.javatags.lang.HtmlHelper.html5;
+import static com.github.manliogit.javatags.lang.HtmlHelper.link;
+import static com.github.manliogit.javatags.lang.HtmlHelper.meta;
+import static com.github.manliogit.javatags.lang.HtmlHelper.script;
+import static com.github.manliogit.javatags.lang.HtmlHelper.text;
+import static com.github.manliogit.javatags.lang.HtmlHelper.title;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
@@ -96,11 +106,11 @@ public class HtmlHelperTest {
 	@Test
 	public void renderJsWithinScript() throws Exception {
 		Element frag = script(attr("type -> text/javascript"),
-							"//<![CDATA[" +
+							"function xxx{" +
 								"alert('yay!');" +
-							"//]]>"
+							"}"
 					   );
 		
-		assertThat(frag.render(), is("<script type='text/javascript'>//<![CDATA[alert('yay!');//]]></script>" ));
+		assertThat(frag.render(), is("<script type='text/javascript'>function xxx{alert('yay!');}</script>" ));
 	}
 }
