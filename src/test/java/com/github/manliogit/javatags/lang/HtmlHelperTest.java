@@ -83,4 +83,24 @@ public class HtmlHelperTest {
 		
 		assertThat(frag.render(), is(expected));
 	}
+	
+	@Test
+	public void renderJsOnAttribute() throws Exception {
+		Element frag = div(
+						 a(attr("href -> xxx", "onclick -> alert(\"yay!\")"), "xxx")
+					   );
+		
+		assertThat(frag.render(), is("<div><a href='xxx' onclick='alert(\"yay!\")'>xxx</a></div>" ));
+	}
+	
+	@Test
+	public void renderJsWithinScript() throws Exception {
+		Element frag = script(attr("type -> text/javascript"),
+							"//<![CDATA[" +
+								"alert('yay!');" +
+							"//]]>"
+					   );
+		
+		assertThat(frag.render(), is("<script type='text/javascript'>//<![CDATA[alert('yay!');//]]></script>" ));
+	}
 }

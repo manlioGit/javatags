@@ -36,10 +36,10 @@ So you can add dependency to your pom.xml:
 
 ```xml
 <dependency>
-   <groupId>com.github.manliogit</groupId>
-   <artifactId>javatags</artifactId>
-   <version>0.2</version>
- </dependency>
+  <groupId>com.github.manliogit</groupId>
+  <artifactId>javatags</artifactId>
+  <version>0.2</version>
+</dependency>
 ```
 
 for other build tools, see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.2%7Cjar) 
@@ -437,20 +437,27 @@ is rendered as:
 
 if there is a missing tag you need, use `nonVoid` or `void` method for nonVoid, void element respectively: 
 
-	nonVoid("some", attr("a -> b")).render()
+```java
+nonVoid("some", attr("a -> b")).render()
+```
 
 renders to:
 
-	<some "a=b"></some>
+```xml
+<some "a=b"></some>
+```
 
 while:
 
-	void("some", attr("a -> b")).render()
+```java
+void("some", attr("a -> b")).render()
+```
 
 renders to:
 	
-	<some "a=b"/>
-   
+```xml	
+<some "a=b"/>
+``` 
 
 
 

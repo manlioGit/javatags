@@ -370,6 +370,10 @@ public class HtmlHelper {
 		return nonVoid("script", attribute, tag);
 	}
 
+	public static Element script(Attribute attribute, String text) {
+		return nonVoid("script", attribute, text(text));
+	}
+	
 	public static Element abbr(Attribute attr, Element... tag) {
 		return nonVoid("abbr", attr, tag);
 	}
