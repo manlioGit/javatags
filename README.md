@@ -1,6 +1,6 @@
 # JavaTags
 
-JavaTags is a small XML/HTML construction library for Java inspired by [lihaoyi's work](https://github.com/lihaoyi/scalatags). 
+JavaTags is a small XML/HTML construction templating library for Java, inspired by [lihaoyi's work](https://github.com/lihaoyi/scalatags). 
 
 It can renders fragments like:
 
