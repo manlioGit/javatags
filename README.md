@@ -435,7 +435,7 @@ is rendered as:
 ## Notes:
 
 
-if there is a missing tag you need, use `nonVoid` or `void` method for nonVoid, void element respectively: 
+If you need a missing tag, use `nonVoid` or `void` method for nonVoid, void element respectively: 
 
 ```java
 nonVoid("some", attr("a -> b")).render()
