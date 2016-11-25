@@ -1,16 +1,8 @@
 package com.github.manliogit.javatags.lang;
 
-import static com.github.manliogit.javatags.lang.HtmlHelper.attr;
-import static com.github.manliogit.javatags.lang.HtmlHelper.br;
-import static com.github.manliogit.javatags.lang.HtmlHelper.div;
-import static com.github.manliogit.javatags.lang.HtmlHelper.head;
-import static com.github.manliogit.javatags.lang.HtmlHelper.html5;
-import static com.github.manliogit.javatags.lang.HtmlHelper.link;
-import static com.github.manliogit.javatags.lang.HtmlHelper.meta;
-import static com.github.manliogit.javatags.lang.HtmlHelper.text;
-import static com.github.manliogit.javatags.lang.HtmlHelper.title;
+import static com.github.manliogit.javatags.lang.HtmlHelper.*;
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 

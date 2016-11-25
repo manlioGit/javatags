@@ -2,10 +2,33 @@
 
 JavaTags is a small XML/HTML construction library for Java inspired by [lihaoyi's work](https://github.com/lihaoyi/scalatags). 
 
+It can renders fragments like:
+    
+	import static com.github.manliogit.javatags.lang.HtmlHelper.*;
+
+	html5(attr("lang -> en"),
+      head(
+        meta(attr("http-equiv -> Content-Type", "content -> text/html; charset=UTF-8")),
+        title("title"),
+        link(attr("href -> xxx.css", "rel -> stylesheet"))
+      )
+    ).render();
+
+in html:
+
+    <!DOCTYPE html>
+     <html lang='en'>
+      <head>
+      <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+      <title>title</title>
+      <link href='xxx.css' rel='stylesheet'/>
+     </head>
+    </html>
 
 ## Getting started:
 
-Add dependency (mvn):
+JavaTags is hosted on [Maven Central](http://search.maven.org/). 
+So you can add dependency to your pom.xml:
 
 	<dependency>
        <groupId>com.github.manliogit</groupId>
@@ -13,9 +36,9 @@ Add dependency (mvn):
        <version>0.2</version>
      </dependency>
 
-for other build tools see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.2%7Cjar) 
+for other build tools, see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.2%7Cjar) 
 
-## Example
+## Examples
 
 
 ### simple:
@@ -30,7 +53,7 @@ Fragment like:
         title("title"),
         link(attr("href -> xxx.css", "rel -> stylesheet"))
       )
-    );
+    ).render();
 
 is rendered as:
 
@@ -217,7 +240,7 @@ Fragment like:
 		   script( attr("src -> /js/nprogress.js")),
 		   script( attr("src -> /js/custom.js"))
 	    )  
-	 );
+	 ).render();
 
 is rendered as:
 
@@ -405,3 +428,25 @@ is rendered as:
 </html>
 	
  
+## Notes:
+
+
+if there is a missing tag you need, use `nonVoid` or `void` method for nonVoid, void element respectively: 
+
+	nonVoid("some", attr("a -> b")).render()
+
+renders to:
+
+	<some "a=b"></some>
+
+while:
+
+	void("some", attr("a -> b")).render()
+
+renders to:
+	
+	<some "a=b"/>
+   
+
+
+
