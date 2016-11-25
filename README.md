@@ -450,7 +450,7 @@ renders to:
 while:
 
 ```java
-void("some", attr("a -> b")).render()
+voidEl("some", attr("a -> b")).render()
 ```
 
 renders to:
