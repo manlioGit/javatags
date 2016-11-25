@@ -38,11 +38,11 @@ So you can add dependency to your pom.xml:
 <dependency>
   <groupId>com.github.manliogit</groupId>
   <artifactId>javatags</artifactId>
-  <version>0.2</version>
+  <version>0.3</version>
 </dependency>
 ```
 
-for other build tools, see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.2%7Cjar) 
+for other build tools, see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.3%7Cjar) 
 
 ## Examples
 

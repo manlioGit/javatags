@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.manliogit</groupId>
 	<artifactId>javatags</artifactId>
-	<version>0.2</version>
+	<version>0.3</version>
 
 	<name>${project.groupId}:${project.artifactId}</name>
 	<description>JavaTags is a small XML/HTML construction library for Java inspired by lihaoyi's ScalaTags. .</description>
