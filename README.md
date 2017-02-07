@@ -42,7 +42,7 @@ So you can add dependency to your pom.xml:
 </dependency>
 ```
 
-for other build tools, see [the central repository](http://search.maven.org/#artifactdetails%7Ccom.github.manliogit%7Cjavatags%7C0.3%7Cjar) 
+for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.3.1|jar) 
 
 ## Examples
 
