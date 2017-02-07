@@ -2,17 +2,15 @@ package com.github.manliogit.javatags.element;
 
 import static java.util.Arrays.asList;
 
-import java.util.Collection;
-
 public class Group implements Element {
 
-	private final Collection<Element> _tags;
+	private final Iterable<Element> _tags;
 
 	public Group(Element...tag) {
 		this(asList(tag));
 	}
 	
-	public Group(Collection<Element> tags) {
+	public Group(Iterable<Element> tags) {
 		_tags = tags;
 	}
 	
@@ -24,5 +22,4 @@ public class Group implements Element {
 		}
 		return result;
 	}
-
 }

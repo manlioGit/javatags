@@ -1,5 +1,7 @@
 package com.github.manliogit.javatags.element.attribute;
 
+import static java.util.Arrays.asList;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -10,6 +12,10 @@ public class Attribute {
 	private final Map<String, String> _data;
 	
 	public Attribute(String...comp) {
+		this(asList(comp));
+	}
+	
+	public Attribute(Iterable<String> comp) {
 		_data = new LinkedHashMap<String, String>();
 		for (String string : comp) {
 			String[] split = string.split(REGEX);

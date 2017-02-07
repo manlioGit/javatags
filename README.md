@@ -38,7 +38,7 @@ So you can add dependency to your pom.xml:
 <dependency>
   <groupId>com.github.manliogit</groupId>
   <artifactId>javatags</artifactId>
-  <version>0.3</version>
+  <version>0.3.1</version>
 </dependency>
 ```
 

@@ -286,6 +286,10 @@ public class HtmlHelper {
 		return nonVoid("span", tags);
 	}
 
+	public static Element h1(Attribute attr, String text) {
+		return nonVoid("h1", attr, text(text));
+	}
+	
 	public static Element h1(String text) {
 		return nonVoid("h1", text(text));
 	}
@@ -293,21 +297,41 @@ public class HtmlHelper {
 	public static Element h2(String text) {
 		return nonVoid("h2", text(text));
 	}
+	
+	public static Element h2(Attribute attr, String text) {
+		return nonVoid("h2", attr, text(text));
+	}
 
 	public static Element h3(String text) {
 		return nonVoid("h3", text(text));
+	}
+	
+	public static Element h3(Attribute attr, String text) {
+		return nonVoid("h3", attr, text(text));
 	}
 
 	public static Element h4(String text) {
 		return nonVoid("h4", text(text));
 	}
+	
+	public static Element h4(Attribute attr, String text) {
+		return nonVoid("h4", attr, text(text));
+	}
 
 	public static Element h5(String text) {
 		return nonVoid("h5", text(text));
 	}
+	
+	public static Element h5(Attribute attr, String text) {
+		return nonVoid("h5", attr, text(text));
+	}
 
 	public static Element h6(String text) {
 		return nonVoid("h6", text(text));
+	}
+	
+	public static Element h6(Attribute attr, String text) {
+		return nonVoid("h6", attr, text(text));
 	}
 
 	public static Element ul(Attribute attr, Element... tag) {
@@ -854,6 +878,10 @@ public class HtmlHelper {
 		return nonVoid("kbd", tags);
 	}
 
+	public static Element label(Attribute attr, String text) {
+		return nonVoid("label", attr, text(text));
+	}
+	
 	public static Element label(Attribute attr, Element... tag) {
 		return nonVoid("label", attr, tag);
 	}
@@ -1542,7 +1570,15 @@ public class HtmlHelper {
 		return nonVoid("video", tags);
 	}
 
+	public static Element group(Iterable<Element> tags) {
+		return new Group(tags);
+	}
+	
 	public static Attribute attr(String... comp) {
+		return new Attribute(comp);
+	}
+	
+	public static Attribute attr(Iterable<String> comp) {
 		return new Attribute(comp);
 	}
 }
