@@ -1573,6 +1573,9 @@ public class HtmlHelper {
 	public static Element group(Iterable<Element> tags) {
 		return new Group(tags);
 	}
+	public static Element group(Element... tags) {
+		return new Group(tags);
+	}
 	
 	public static Attribute attr(String... comp) {
 		return new Attribute(comp);
