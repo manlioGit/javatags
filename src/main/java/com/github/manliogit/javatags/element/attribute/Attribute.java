@@ -18,8 +18,10 @@ public class Attribute {
 	public Attribute(Iterable<String> comp) {
 		_data = new LinkedHashMap<String, String>();
 		for (String string : comp) {
-			String[] split = string.split(REGEX);
-			_data.put(split[0], split[1]);
+			if(!(string == null || string.trim().isEmpty())){
+				String[] split = string.split(REGEX);
+				_data.put(split[0], split[1]);
+			}
 		}
 	}
 

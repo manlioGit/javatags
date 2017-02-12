@@ -6,8 +6,6 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.github.manliogit.javatags.element.attribute.Attribute;
-
 public class AttributeTest {
 
 	@Test
@@ -31,4 +29,10 @@ public class AttributeTest {
 		assertThat(attr, is("id='123' class='fa     fa-up'"));
 	}
 	
+	@Test
+	public void dontRenderNullOrEmpty() throws Exception {
+		String attr = new Attribute("id -> 123", null, "  ", "class -> fa fa-up", "").render();
+		
+		assertThat(attr, is("id='123' class='fa fa-up'"));
+	}
 }
