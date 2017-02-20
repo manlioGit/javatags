@@ -123,7 +123,7 @@ renders
 class='navbar fa fa-up' style='border: 0;'
 ```
 
-see [unit tests](https://github.com/manlioGit/javatags/blob/master/src/test/java/com/github/manliogit/javatags/element/attribute/AttributeTest.java) for examples
+see [unit tests](https://github.com/manlioGit/javatags/blob/master/src/test/java/com/github/manliogit/javatags/element/attribute/AttributeTest.java) for other examples
 
 ### Layouts:
 
@@ -140,7 +140,6 @@ public class Layout{
 		_bodyContent = bodyContent;
 	}
 	
-	@Override
 	public Element build() {
 		return 
 			html5(
@@ -164,7 +163,7 @@ public class Layout{
 
 ### Helpers:
 
-To use methods use following entry: 
+To use methods add following import: 
 
 ```java
 import static com.github.manliogit.javatags.lang.HtmlHelper.*;
