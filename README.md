@@ -31,6 +31,8 @@ in html:
 
 ## Getting started:
 
+### Requires JDK 1.6+
+
 JavaTags is hosted on [Maven Central](http://search.maven.org/). 
 So you can add dependency to your pom.xml:
 
@@ -38,16 +40,16 @@ So you can add dependency to your pom.xml:
 <dependency>
   <groupId>com.github.manliogit</groupId>
   <artifactId>javatags</artifactId>
-  <version>0.3.2</version>
+  <version>0.4.0</version>
 </dependency>
 ```
 
-for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.3.2|jar) 
+for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.4.0|jar) 
 
 ## Examples
 
 
-### simple:
+### basic:
 
 Fragment like:
   
@@ -76,7 +78,132 @@ is rendered as:
 </html>
 ```
 
+### Attributes:
+
+You have different ways to use attributes.
+
+
+#### declarative
+
+Using `->` separator with varargs or Iterable<String> overload:
+
+```java
+attr("class -> navbar", ...);
+
+attr(asList("class -> navbar", "style -> border: 0;"));
+```
+
+#### dynamic
+
+An attribute can be build fluently with add method, using key-value or Attribute overload
+
+```java
+attr().
+	add("class", "navbar").
+	add("style", "border: 0;")
+	...
+	
+attr().
+	add(attr("class -> navbar")).
+	add(attr("style -> border: 0;")
+	...
+```
+
+add method appends values if already defined for an attribute 
+
+```java
+attr("class -> navbar").
+	add("class", "fa fa-up").
+	add("style", "border: 0;");
+```
+
+renders
+
+```html
+class='navbar fa fa-up' style='border: 0;'
+```
+
+see [unit tests](https://github.com/manlioGit/javatags/blob/master/src/test/java/com/github/manliogit/javatags/element/attribute/AttributeTest.java) for examples
+
+### Layouts:
+
+An example of page layout:
+
+```java
+public class Layout{
+
+	private final String _title;
+	private final Element _bodyContent;
+	
+	public Layout(String title, Element bodyContent) {
+		_title = title;
+		_bodyContent = bodyContent;
+	}
+	
+	@Override
+	public Element build() {
+		return 
+			html5(
+				 head(
+					 meta(attr("charset -> utf-8")),
+					 meta(attr("http-equiv -> X-UA-Compatible", "content -> IE=edge")),
+					 meta(attr("name -> viewport", "content -> width=device-width, initial-scale=1")),
+					 title(_title),
+					 link(attr("rel -> stylesheet", "href -> /css/bootstrap.min.css")),
+					 link(attr("rel -> stylesheet", "href -> /css/app.css"))
+				 ),
+				 body(
+					 _bodyContent,
+					 script(attr("src -> /js/jquery.min.js")),
+					 script(attr("src -> /js/bootstrap.min.js"))
+			     )
+			);
+	}
+}
+```
+
+### Helpers:
+
+To use methods use following entry: 
+
+```java
+import static com.github.manliogit.javatags.lang.HtmlHelper.*;
+```
+
+#### Element
+
+Javatags defines Text, Void, NonVoid and Group elements (see [W3C Recommendation](https://www.w3.org/TR/html/syntax.html#writing-html-documents-elements)).
+
+Every tag method (e.g. html5, body and so on) is defined as static method using a Void or NonVoid element in accordance with [W3C Recommendation](https://www.w3.org/TR/html).
+
+Some methods are overloaded with text, others not. Use `text(String content)` method when overload is not present 
+
+```java
+div(text("aaa"));
+		
+div("aaa")
+```
+
+To render list of Elements use `group` method, for example:
+
+```java
+...
+List<Element> list = new ArrayList<Element>();
+for (String component : asList("a", "b", "c")) {
+	list.add(li(text(component)));
+}
+
+ul(
+	group(list)
+);
+...
+
+```
+
+
 ### bootstrap [Gentelella Theme](https://github.com/puikinsh/gentelella) :
+
+A complex example using [bootstrap framework](http://getbootstrap.com/)
 
 Fragment like:
 

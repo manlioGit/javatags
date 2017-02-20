@@ -5,10 +5,6 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
-import com.github.manliogit.javatags.element.Group;
-import com.github.manliogit.javatags.element.NonVoid;
-import com.github.manliogit.javatags.element.Text;
-import com.github.manliogit.javatags.element.Void;
 import com.github.manliogit.javatags.element.attribute.Attribute;
 
 public class NonVoidTest {

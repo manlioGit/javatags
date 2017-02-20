@@ -35,4 +35,26 @@ public class AttributeTest {
 		
 		assertThat(attr, is("id='123' class='fa fa-up'"));
 	}
+
+	@Test
+	public void addAttributeUsingKeyValue() throws Exception {
+		String attr = new Attribute("class -> .some", "xxx -> fa fa-up").
+			add("class", "fa fa-up").
+			add("xxx", "hide").
+			add("yyy", "show-some").
+		render();
+		
+		assertThat(attr, is("class='.some fa fa-up' xxx='fa fa-up hide' yyy='show-some'"));
+	}
+	
+	@Test
+	public void addAttributeUsingAttribute() throws Exception {
+		String attr = new Attribute("class -> .some", "xxx -> fa fa-up").
+			add(new Attribute("class -> fa fa-up")).
+			add(new Attribute("xxx -> hide")).
+			add(new Attribute("yyy -> show-some")).
+		render();
+		
+		assertThat(attr, is("class='.some fa fa-up' xxx='fa fa-up hide' yyy='show-some'"));
+	}
 }

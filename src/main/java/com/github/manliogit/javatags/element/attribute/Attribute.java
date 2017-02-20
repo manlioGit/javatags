@@ -24,7 +24,7 @@ public class Attribute {
 			}
 		}
 	}
-
+	
 	public String render() {
 		String result = "";
 		for (Entry<String, String> pair : _data.entrySet()) {
@@ -32,5 +32,23 @@ public class Attribute {
 		}
 		
 		return result.trim();
+	}
+
+	public Attribute add(String key, String value) {
+		_data.put(key, fill(key, value));
+		return this;
+	}
+	
+	public Attribute add(Attribute other) {
+		for (Entry<String, String> pair : other._data.entrySet()) {
+			add(pair.getKey(), pair.getValue());
+		}
+		return this;
+	}
+	
+	private String fill(String key, String value) {
+		return _data.containsKey(key) 
+				? _data.get(key) + " " + value 
+				: value;
 	}
 }
