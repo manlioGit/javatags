@@ -381,6 +381,10 @@ public class HtmlHelper {
 	public static Element button(Attribute attribute, String text) {
 		return nonVoid("button", attribute, text(text));
 	}
+	
+	public static Element button(Attribute attribute, Element... tag) {
+		return nonVoid("button", attribute, tag);
+	}
 
 	public static Element footer(Attribute attribute, Element... tag) {
 		return nonVoid("footer", attribute, tag);
@@ -1426,6 +1430,10 @@ public class HtmlHelper {
 		return nonVoid("template", tags);
 	}
 
+	public static Element textarea(Attribute attr, String text) {
+		return nonVoid("textarea", attr, text(text));
+	}
+	
 	public static Element textarea(Attribute attr, Element... tag) {
 		return nonVoid("textarea", attr, tag);
 	}
