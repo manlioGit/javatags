@@ -57,4 +57,39 @@ public class AttributeTest {
 		
 		assertThat(attr, is("class='.some fa fa-up' xxx='fa fa-up hide' yyy='show-some'"));
 	}
+	
+	@Test
+	public void removeAttributeUsingKeyValue() throws Exception {
+		String attr = new Attribute("class -> .some fa fa-up", "xxx -> fa fa-up").
+			remove("class", "fa-up").
+			remove("class", "notExistent").
+			remove("xxx", "fa").
+			remove("xxx", "fa-up").
+			remove("xxx", "fa-up").
+			remove("notExistentKey", "show-some").
+		render();
+		
+		assertThat(attr, is("class='.some fa' xxx=''"));
+	}
+	
+	@Test
+	public void removeAttributeUsingAttribute() throws Exception {
+		String attr = new Attribute("class -> .some fa fa-up", "xxx -> fa fa-up").
+			remove(new Attribute("class -> fa-up")).
+			remove(new Attribute("class -> notExistent")).
+			remove(new Attribute("xxx -> fa")).
+			remove(new Attribute("xxx -> fa-up")).
+			remove(new Attribute("xxx -> fa-up")).
+			remove(new Attribute("notExistentKey -> show-some")).
+		render();
+		
+		assertThat(attr, is("class='.some fa' xxx=''"));
+	}
+	
+	@Test
+	public void renderIncompleteElements() throws Exception {
+		String attr = new Attribute("id -> ", " -> fa fa-up", "weird thing").render();
+		
+		assertThat(attr, is("id='' ='fa fa-up' weird thing=''"));
+	}
 }
