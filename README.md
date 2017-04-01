@@ -127,6 +127,21 @@ renders
 class='navbar fa fa-up' style='border: 0;'
 ```
 
+An attribute can be modified with remove method, using key-value or Attribute overload
+
+```java
+attr("class -> .some fa fa-up", "xxx -> fa fa-up").
+	remove("class", "fa-up").
+	remove("xxx", "fa").
+	remove("xxx", "fa-up");
+```
+
+renders
+
+```html
+class='.some fa' xxx=''
+```
+
 see [unit tests](https://github.com/manlioGit/javatags/blob/master/src/test/java/com/github/manliogit/javatags/element/attribute/AttributeTest.java) for other examples
 
 ### Layouts:
