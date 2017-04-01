@@ -46,6 +46,10 @@ So you can add dependency to your pom.xml:
 
 for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.4.2|jar) 
 
+## Online converter
+
+To convert html to JavaTags format try [online converter](http://javatagsconverter-booklet.rhcloud.com)
+
 ## Examples
 
 
