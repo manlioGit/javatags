@@ -1,5 +1,7 @@
 package com.github.manliogit.javatags.lang;
 
+import java.util.List;
+
 import com.github.manliogit.javatags.element.Element;
 import com.github.manliogit.javatags.element.Group;
 import com.github.manliogit.javatags.element.NonVoid;
@@ -17,11 +19,11 @@ public class HtmlHelper {
 		return new NonVoid(name, tag);
 	}
 
-	public static Element nonVoid(String name, Attribute attr, Iterable<Element> tags) {
+	public static Element nonVoid(String name, Attribute attr, List<Element> tags) {
 		return new NonVoid(name, attr, tags);
 	}
 
-	public static Element nonVoid(String name, Iterable<Element> tags) {
+	public static Element nonVoid(String name, List<Element> tags) {
 		return new NonVoid(name, tags);
 	}
 
@@ -37,7 +39,7 @@ public class HtmlHelper {
 		return new Text(content);
 	}
 
-	public static Element group(Iterable<Element> tags) {
+	public static Element group(List<Element> tags) {
 		return new Group(tags);
 	}
 
@@ -49,7 +51,7 @@ public class HtmlHelper {
 		return new Attribute(comp);
 	}
 
-	public static Attribute attr(Iterable<String> comp) {
+	public static Attribute attr(List<String> comp) {
 		return new Attribute(comp);
 	}
 
@@ -61,11 +63,11 @@ public class HtmlHelper {
 		return html5(new Attribute(), tag);
 	}
 
-	public static Element html5(Attribute attr, Iterable<Element> tags) {
+	public static Element html5(Attribute attr, List<Element> tags) {
 		return new Group(text("<!DOCTYPE html>"), new NonVoid("html", attr, tags));
 	}
 
-	public static Element html5(Iterable<Element> tags) {
+	public static Element html5(List<Element> tags) {
 		return html5(new Attribute(), tags);
 	}
 
@@ -209,11 +211,11 @@ public class HtmlHelper {
 		return nonVoid("a", tag);
 	}
 
-	public static Element a(Iterable<Element> tags) {
+	public static Element a(List<Element> tags) {
 		return nonVoid("a", tags);
 	}
 
-	public static Element a(Attribute attr, Iterable<Element> tags) {
+	public static Element a(Attribute attr, List<Element> tags) {
 		return nonVoid("a", attr, tags);
 	}
 
@@ -237,11 +239,11 @@ public class HtmlHelper {
 		return nonVoid("abbr", tag);
 	}
 
-	public static Element abbr(Iterable<Element> tags) {
+	public static Element abbr(List<Element> tags) {
 		return nonVoid("abbr", tags);
 	}
 
-	public static Element abbr(Attribute attr, Iterable<Element> tags) {
+	public static Element abbr(Attribute attr, List<Element> tags) {
 		return nonVoid("abbr", attr, tags);
 	}
 
@@ -265,11 +267,11 @@ public class HtmlHelper {
 		return nonVoid("address", tag);
 	}
 
-	public static Element address(Iterable<Element> tags) {
+	public static Element address(List<Element> tags) {
 		return nonVoid("address", tags);
 	}
 
-	public static Element address(Attribute attr, Iterable<Element> tags) {
+	public static Element address(Attribute attr, List<Element> tags) {
 		return nonVoid("address", attr, tags);
 	}
 
@@ -293,11 +295,11 @@ public class HtmlHelper {
 		return nonVoid("article", tag);
 	}
 
-	public static Element article(Iterable<Element> tags) {
+	public static Element article(List<Element> tags) {
 		return nonVoid("article", tags);
 	}
 
-	public static Element article(Attribute attr, Iterable<Element> tags) {
+	public static Element article(Attribute attr, List<Element> tags) {
 		return nonVoid("article", attr, tags);
 	}
 
@@ -321,11 +323,11 @@ public class HtmlHelper {
 		return nonVoid("aside", tag);
 	}
 
-	public static Element aside(Iterable<Element> tags) {
+	public static Element aside(List<Element> tags) {
 		return nonVoid("aside", tags);
 	}
 
-	public static Element aside(Attribute attr, Iterable<Element> tags) {
+	public static Element aside(Attribute attr, List<Element> tags) {
 		return nonVoid("aside", attr, tags);
 	}
 
@@ -349,11 +351,11 @@ public class HtmlHelper {
 		return nonVoid("audio", tag);
 	}
 
-	public static Element audio(Iterable<Element> tags) {
+	public static Element audio(List<Element> tags) {
 		return nonVoid("audio", tags);
 	}
 
-	public static Element audio(Attribute attr, Iterable<Element> tags) {
+	public static Element audio(Attribute attr, List<Element> tags) {
 		return nonVoid("audio", attr, tags);
 	}
 
@@ -377,11 +379,11 @@ public class HtmlHelper {
 		return nonVoid("b", tag);
 	}
 
-	public static Element b(Iterable<Element> tags) {
+	public static Element b(List<Element> tags) {
 		return nonVoid("b", tags);
 	}
 
-	public static Element b(Attribute attr, Iterable<Element> tags) {
+	public static Element b(Attribute attr, List<Element> tags) {
 		return nonVoid("b", attr, tags);
 	}
 
@@ -405,11 +407,11 @@ public class HtmlHelper {
 		return nonVoid("bdi", tag);
 	}
 
-	public static Element bdi(Iterable<Element> tags) {
+	public static Element bdi(List<Element> tags) {
 		return nonVoid("bdi", tags);
 	}
 
-	public static Element bdi(Attribute attr, Iterable<Element> tags) {
+	public static Element bdi(Attribute attr, List<Element> tags) {
 		return nonVoid("bdi", attr, tags);
 	}
 
@@ -433,11 +435,11 @@ public class HtmlHelper {
 		return nonVoid("bdo", tag);
 	}
 
-	public static Element bdo(Iterable<Element> tags) {
+	public static Element bdo(List<Element> tags) {
 		return nonVoid("bdo", tags);
 	}
 
-	public static Element bdo(Attribute attr, Iterable<Element> tags) {
+	public static Element bdo(Attribute attr, List<Element> tags) {
 		return nonVoid("bdo", attr, tags);
 	}
 
@@ -461,11 +463,11 @@ public class HtmlHelper {
 		return nonVoid("blockquote", tag);
 	}
 
-	public static Element blockquote(Iterable<Element> tags) {
+	public static Element blockquote(List<Element> tags) {
 		return nonVoid("blockquote", tags);
 	}
 
-	public static Element blockquote(Attribute attr, Iterable<Element> tags) {
+	public static Element blockquote(Attribute attr, List<Element> tags) {
 		return nonVoid("blockquote", attr, tags);
 	}
 
@@ -489,11 +491,11 @@ public class HtmlHelper {
 		return nonVoid("body", tag);
 	}
 
-	public static Element body(Iterable<Element> tags) {
+	public static Element body(List<Element> tags) {
 		return nonVoid("body", tags);
 	}
 
-	public static Element body(Attribute attr, Iterable<Element> tags) {
+	public static Element body(Attribute attr, List<Element> tags) {
 		return nonVoid("body", attr, tags);
 	}
 
@@ -517,11 +519,11 @@ public class HtmlHelper {
 		return nonVoid("button", tag);
 	}
 
-	public static Element button(Iterable<Element> tags) {
+	public static Element button(List<Element> tags) {
 		return nonVoid("button", tags);
 	}
 
-	public static Element button(Attribute attr, Iterable<Element> tags) {
+	public static Element button(Attribute attr, List<Element> tags) {
 		return nonVoid("button", attr, tags);
 	}
 
@@ -545,11 +547,11 @@ public class HtmlHelper {
 		return nonVoid("canvas", tag);
 	}
 
-	public static Element canvas(Iterable<Element> tags) {
+	public static Element canvas(List<Element> tags) {
 		return nonVoid("canvas", tags);
 	}
 
-	public static Element canvas(Attribute attr, Iterable<Element> tags) {
+	public static Element canvas(Attribute attr, List<Element> tags) {
 		return nonVoid("canvas", attr, tags);
 	}
 
@@ -573,11 +575,11 @@ public class HtmlHelper {
 		return nonVoid("caption", tag);
 	}
 
-	public static Element caption(Iterable<Element> tags) {
+	public static Element caption(List<Element> tags) {
 		return nonVoid("caption", tags);
 	}
 
-	public static Element caption(Attribute attr, Iterable<Element> tags) {
+	public static Element caption(Attribute attr, List<Element> tags) {
 		return nonVoid("caption", attr, tags);
 	}
 
@@ -601,11 +603,11 @@ public class HtmlHelper {
 		return nonVoid("cite", tag);
 	}
 
-	public static Element cite(Iterable<Element> tags) {
+	public static Element cite(List<Element> tags) {
 		return nonVoid("cite", tags);
 	}
 
-	public static Element cite(Attribute attr, Iterable<Element> tags) {
+	public static Element cite(Attribute attr, List<Element> tags) {
 		return nonVoid("cite", attr, tags);
 	}
 
@@ -629,11 +631,11 @@ public class HtmlHelper {
 		return nonVoid("code", tag);
 	}
 
-	public static Element code(Iterable<Element> tags) {
+	public static Element code(List<Element> tags) {
 		return nonVoid("code", tags);
 	}
 
-	public static Element code(Attribute attr, Iterable<Element> tags) {
+	public static Element code(Attribute attr, List<Element> tags) {
 		return nonVoid("code", attr, tags);
 	}
 
@@ -657,11 +659,11 @@ public class HtmlHelper {
 		return nonVoid("colgroup", tag);
 	}
 
-	public static Element colgroup(Iterable<Element> tags) {
+	public static Element colgroup(List<Element> tags) {
 		return nonVoid("colgroup", tags);
 	}
 
-	public static Element colgroup(Attribute attr, Iterable<Element> tags) {
+	public static Element colgroup(Attribute attr, List<Element> tags) {
 		return nonVoid("colgroup", attr, tags);
 	}
 
@@ -685,11 +687,11 @@ public class HtmlHelper {
 		return nonVoid("data", tag);
 	}
 
-	public static Element data(Iterable<Element> tags) {
+	public static Element data(List<Element> tags) {
 		return nonVoid("data", tags);
 	}
 
-	public static Element data(Attribute attr, Iterable<Element> tags) {
+	public static Element data(Attribute attr, List<Element> tags) {
 		return nonVoid("data", attr, tags);
 	}
 
@@ -713,11 +715,11 @@ public class HtmlHelper {
 		return nonVoid("datalist", tag);
 	}
 
-	public static Element datalist(Iterable<Element> tags) {
+	public static Element datalist(List<Element> tags) {
 		return nonVoid("datalist", tags);
 	}
 
-	public static Element datalist(Attribute attr, Iterable<Element> tags) {
+	public static Element datalist(Attribute attr, List<Element> tags) {
 		return nonVoid("datalist", attr, tags);
 	}
 
@@ -741,11 +743,11 @@ public class HtmlHelper {
 		return nonVoid("dd", tag);
 	}
 
-	public static Element dd(Iterable<Element> tags) {
+	public static Element dd(List<Element> tags) {
 		return nonVoid("dd", tags);
 	}
 
-	public static Element dd(Attribute attr, Iterable<Element> tags) {
+	public static Element dd(Attribute attr, List<Element> tags) {
 		return nonVoid("dd", attr, tags);
 	}
 
@@ -769,11 +771,11 @@ public class HtmlHelper {
 		return nonVoid("del", tag);
 	}
 
-	public static Element del(Iterable<Element> tags) {
+	public static Element del(List<Element> tags) {
 		return nonVoid("del", tags);
 	}
 
-	public static Element del(Attribute attr, Iterable<Element> tags) {
+	public static Element del(Attribute attr, List<Element> tags) {
 		return nonVoid("del", attr, tags);
 	}
 
@@ -797,11 +799,11 @@ public class HtmlHelper {
 		return nonVoid("dfn", tag);
 	}
 
-	public static Element dfn(Iterable<Element> tags) {
+	public static Element dfn(List<Element> tags) {
 		return nonVoid("dfn", tags);
 	}
 
-	public static Element dfn(Attribute attr, Iterable<Element> tags) {
+	public static Element dfn(Attribute attr, List<Element> tags) {
 		return nonVoid("dfn", attr, tags);
 	}
 
@@ -825,11 +827,11 @@ public class HtmlHelper {
 		return nonVoid("div", tag);
 	}
 
-	public static Element div(Iterable<Element> tags) {
+	public static Element div(List<Element> tags) {
 		return nonVoid("div", tags);
 	}
 
-	public static Element div(Attribute attr, Iterable<Element> tags) {
+	public static Element div(Attribute attr, List<Element> tags) {
 		return nonVoid("div", attr, tags);
 	}
 
@@ -853,11 +855,11 @@ public class HtmlHelper {
 		return nonVoid("dl", tag);
 	}
 
-	public static Element dl(Iterable<Element> tags) {
+	public static Element dl(List<Element> tags) {
 		return nonVoid("dl", tags);
 	}
 
-	public static Element dl(Attribute attr, Iterable<Element> tags) {
+	public static Element dl(Attribute attr, List<Element> tags) {
 		return nonVoid("dl", attr, tags);
 	}
 
@@ -881,11 +883,11 @@ public class HtmlHelper {
 		return nonVoid("dt", tag);
 	}
 
-	public static Element dt(Iterable<Element> tags) {
+	public static Element dt(List<Element> tags) {
 		return nonVoid("dt", tags);
 	}
 
-	public static Element dt(Attribute attr, Iterable<Element> tags) {
+	public static Element dt(Attribute attr, List<Element> tags) {
 		return nonVoid("dt", attr, tags);
 	}
 
@@ -909,11 +911,11 @@ public class HtmlHelper {
 		return nonVoid("em", tag);
 	}
 
-	public static Element em(Iterable<Element> tags) {
+	public static Element em(List<Element> tags) {
 		return nonVoid("em", tags);
 	}
 
-	public static Element em(Attribute attr, Iterable<Element> tags) {
+	public static Element em(Attribute attr, List<Element> tags) {
 		return nonVoid("em", attr, tags);
 	}
 
@@ -937,11 +939,11 @@ public class HtmlHelper {
 		return nonVoid("fieldset", tag);
 	}
 
-	public static Element fieldset(Iterable<Element> tags) {
+	public static Element fieldset(List<Element> tags) {
 		return nonVoid("fieldset", tags);
 	}
 
-	public static Element fieldset(Attribute attr, Iterable<Element> tags) {
+	public static Element fieldset(Attribute attr, List<Element> tags) {
 		return nonVoid("fieldset", attr, tags);
 	}
 
@@ -965,11 +967,11 @@ public class HtmlHelper {
 		return nonVoid("figcaption", tag);
 	}
 
-	public static Element figcaption(Iterable<Element> tags) {
+	public static Element figcaption(List<Element> tags) {
 		return nonVoid("figcaption", tags);
 	}
 
-	public static Element figcaption(Attribute attr, Iterable<Element> tags) {
+	public static Element figcaption(Attribute attr, List<Element> tags) {
 		return nonVoid("figcaption", attr, tags);
 	}
 
@@ -993,11 +995,11 @@ public class HtmlHelper {
 		return nonVoid("figure", tag);
 	}
 
-	public static Element figure(Iterable<Element> tags) {
+	public static Element figure(List<Element> tags) {
 		return nonVoid("figure", tags);
 	}
 
-	public static Element figure(Attribute attr, Iterable<Element> tags) {
+	public static Element figure(Attribute attr, List<Element> tags) {
 		return nonVoid("figure", attr, tags);
 	}
 
@@ -1021,11 +1023,11 @@ public class HtmlHelper {
 		return nonVoid("footer", tag);
 	}
 
-	public static Element footer(Iterable<Element> tags) {
+	public static Element footer(List<Element> tags) {
 		return nonVoid("footer", tags);
 	}
 
-	public static Element footer(Attribute attr, Iterable<Element> tags) {
+	public static Element footer(Attribute attr, List<Element> tags) {
 		return nonVoid("footer", attr, tags);
 	}
 
@@ -1049,11 +1051,11 @@ public class HtmlHelper {
 		return nonVoid("form", tag);
 	}
 
-	public static Element form(Iterable<Element> tags) {
+	public static Element form(List<Element> tags) {
 		return nonVoid("form", tags);
 	}
 
-	public static Element form(Attribute attr, Iterable<Element> tags) {
+	public static Element form(Attribute attr, List<Element> tags) {
 		return nonVoid("form", attr, tags);
 	}
 
@@ -1077,11 +1079,11 @@ public class HtmlHelper {
 		return nonVoid("h1", tag);
 	}
 
-	public static Element h1(Iterable<Element> tags) {
+	public static Element h1(List<Element> tags) {
 		return nonVoid("h1", tags);
 	}
 
-	public static Element h1(Attribute attr, Iterable<Element> tags) {
+	public static Element h1(Attribute attr, List<Element> tags) {
 		return nonVoid("h1", attr, tags);
 	}
 
@@ -1105,11 +1107,11 @@ public class HtmlHelper {
 		return nonVoid("h2", tag);
 	}
 
-	public static Element h2(Iterable<Element> tags) {
+	public static Element h2(List<Element> tags) {
 		return nonVoid("h2", tags);
 	}
 
-	public static Element h2(Attribute attr, Iterable<Element> tags) {
+	public static Element h2(Attribute attr, List<Element> tags) {
 		return nonVoid("h2", attr, tags);
 	}
 
@@ -1133,11 +1135,11 @@ public class HtmlHelper {
 		return nonVoid("h3", tag);
 	}
 
-	public static Element h3(Iterable<Element> tags) {
+	public static Element h3(List<Element> tags) {
 		return nonVoid("h3", tags);
 	}
 
-	public static Element h3(Attribute attr, Iterable<Element> tags) {
+	public static Element h3(Attribute attr, List<Element> tags) {
 		return nonVoid("h3", attr, tags);
 	}
 
@@ -1161,11 +1163,11 @@ public class HtmlHelper {
 		return nonVoid("h4", tag);
 	}
 
-	public static Element h4(Iterable<Element> tags) {
+	public static Element h4(List<Element> tags) {
 		return nonVoid("h4", tags);
 	}
 
-	public static Element h4(Attribute attr, Iterable<Element> tags) {
+	public static Element h4(Attribute attr, List<Element> tags) {
 		return nonVoid("h4", attr, tags);
 	}
 
@@ -1189,11 +1191,11 @@ public class HtmlHelper {
 		return nonVoid("h5", tag);
 	}
 
-	public static Element h5(Iterable<Element> tags) {
+	public static Element h5(List<Element> tags) {
 		return nonVoid("h5", tags);
 	}
 
-	public static Element h5(Attribute attr, Iterable<Element> tags) {
+	public static Element h5(Attribute attr, List<Element> tags) {
 		return nonVoid("h5", attr, tags);
 	}
 
@@ -1217,11 +1219,11 @@ public class HtmlHelper {
 		return nonVoid("h6", tag);
 	}
 
-	public static Element h6(Iterable<Element> tags) {
+	public static Element h6(List<Element> tags) {
 		return nonVoid("h6", tags);
 	}
 
-	public static Element h6(Attribute attr, Iterable<Element> tags) {
+	public static Element h6(Attribute attr, List<Element> tags) {
 		return nonVoid("h6", attr, tags);
 	}
 
@@ -1245,11 +1247,11 @@ public class HtmlHelper {
 		return nonVoid("head", tag);
 	}
 
-	public static Element head(Iterable<Element> tags) {
+	public static Element head(List<Element> tags) {
 		return nonVoid("head", tags);
 	}
 
-	public static Element head(Attribute attr, Iterable<Element> tags) {
+	public static Element head(Attribute attr, List<Element> tags) {
 		return nonVoid("head", attr, tags);
 	}
 
@@ -1273,11 +1275,11 @@ public class HtmlHelper {
 		return nonVoid("header", tag);
 	}
 
-	public static Element header(Iterable<Element> tags) {
+	public static Element header(List<Element> tags) {
 		return nonVoid("header", tags);
 	}
 
-	public static Element header(Attribute attr, Iterable<Element> tags) {
+	public static Element header(Attribute attr, List<Element> tags) {
 		return nonVoid("header", attr, tags);
 	}
 
@@ -1301,11 +1303,11 @@ public class HtmlHelper {
 		return nonVoid("i", tag);
 	}
 
-	public static Element i(Iterable<Element> tags) {
+	public static Element i(List<Element> tags) {
 		return nonVoid("i", tags);
 	}
 
-	public static Element i(Attribute attr, Iterable<Element> tags) {
+	public static Element i(Attribute attr, List<Element> tags) {
 		return nonVoid("i", attr, tags);
 	}
 
@@ -1329,11 +1331,11 @@ public class HtmlHelper {
 		return nonVoid("iframe", tag);
 	}
 
-	public static Element iframe(Iterable<Element> tags) {
+	public static Element iframe(List<Element> tags) {
 		return nonVoid("iframe", tags);
 	}
 
-	public static Element iframe(Attribute attr, Iterable<Element> tags) {
+	public static Element iframe(Attribute attr, List<Element> tags) {
 		return nonVoid("iframe", attr, tags);
 	}
 
@@ -1357,11 +1359,11 @@ public class HtmlHelper {
 		return nonVoid("input", tag);
 	}
 
-	public static Element input(Iterable<Element> tags) {
+	public static Element input(List<Element> tags) {
 		return nonVoid("input", tags);
 	}
 
-	public static Element input(Attribute attr, Iterable<Element> tags) {
+	public static Element input(Attribute attr, List<Element> tags) {
 		return nonVoid("input", attr, tags);
 	}
 
@@ -1385,11 +1387,11 @@ public class HtmlHelper {
 		return nonVoid("ins", tag);
 	}
 
-	public static Element ins(Iterable<Element> tags) {
+	public static Element ins(List<Element> tags) {
 		return nonVoid("ins", tags);
 	}
 
-	public static Element ins(Attribute attr, Iterable<Element> tags) {
+	public static Element ins(Attribute attr, List<Element> tags) {
 		return nonVoid("ins", attr, tags);
 	}
 
@@ -1413,11 +1415,11 @@ public class HtmlHelper {
 		return nonVoid("kbd", tag);
 	}
 
-	public static Element kbd(Iterable<Element> tags) {
+	public static Element kbd(List<Element> tags) {
 		return nonVoid("kbd", tags);
 	}
 
-	public static Element kbd(Attribute attr, Iterable<Element> tags) {
+	public static Element kbd(Attribute attr, List<Element> tags) {
 		return nonVoid("kbd", attr, tags);
 	}
 
@@ -1441,11 +1443,11 @@ public class HtmlHelper {
 		return nonVoid("keygen", tag);
 	}
 
-	public static Element keygen(Iterable<Element> tags) {
+	public static Element keygen(List<Element> tags) {
 		return nonVoid("keygen", tags);
 	}
 
-	public static Element keygen(Attribute attr, Iterable<Element> tags) {
+	public static Element keygen(Attribute attr, List<Element> tags) {
 		return nonVoid("keygen", attr, tags);
 	}
 
@@ -1469,11 +1471,11 @@ public class HtmlHelper {
 		return nonVoid("label", tag);
 	}
 
-	public static Element label(Iterable<Element> tags) {
+	public static Element label(List<Element> tags) {
 		return nonVoid("label", tags);
 	}
 
-	public static Element label(Attribute attr, Iterable<Element> tags) {
+	public static Element label(Attribute attr, List<Element> tags) {
 		return nonVoid("label", attr, tags);
 	}
 
@@ -1497,11 +1499,11 @@ public class HtmlHelper {
 		return nonVoid("legend", tag);
 	}
 
-	public static Element legend(Iterable<Element> tags) {
+	public static Element legend(List<Element> tags) {
 		return nonVoid("legend", tags);
 	}
 
-	public static Element legend(Attribute attr, Iterable<Element> tags) {
+	public static Element legend(Attribute attr, List<Element> tags) {
 		return nonVoid("legend", attr, tags);
 	}
 
@@ -1525,11 +1527,11 @@ public class HtmlHelper {
 		return nonVoid("li", tag);
 	}
 
-	public static Element li(Iterable<Element> tags) {
+	public static Element li(List<Element> tags) {
 		return nonVoid("li", tags);
 	}
 
-	public static Element li(Attribute attr, Iterable<Element> tags) {
+	public static Element li(Attribute attr, List<Element> tags) {
 		return nonVoid("li", attr, tags);
 	}
 
@@ -1553,11 +1555,11 @@ public class HtmlHelper {
 		return nonVoid("main", tag);
 	}
 
-	public static Element main(Iterable<Element> tags) {
+	public static Element main(List<Element> tags) {
 		return nonVoid("main", tags);
 	}
 
-	public static Element main(Attribute attr, Iterable<Element> tags) {
+	public static Element main(Attribute attr, List<Element> tags) {
 		return nonVoid("main", attr, tags);
 	}
 
@@ -1581,11 +1583,11 @@ public class HtmlHelper {
 		return nonVoid("map", tag);
 	}
 
-	public static Element map(Iterable<Element> tags) {
+	public static Element map(List<Element> tags) {
 		return nonVoid("map", tags);
 	}
 
-	public static Element map(Attribute attr, Iterable<Element> tags) {
+	public static Element map(Attribute attr, List<Element> tags) {
 		return nonVoid("map", attr, tags);
 	}
 
@@ -1609,11 +1611,11 @@ public class HtmlHelper {
 		return nonVoid("mark", tag);
 	}
 
-	public static Element mark(Iterable<Element> tags) {
+	public static Element mark(List<Element> tags) {
 		return nonVoid("mark", tags);
 	}
 
-	public static Element mark(Attribute attr, Iterable<Element> tags) {
+	public static Element mark(Attribute attr, List<Element> tags) {
 		return nonVoid("mark", attr, tags);
 	}
 
@@ -1637,11 +1639,11 @@ public class HtmlHelper {
 		return nonVoid("meter", tag);
 	}
 
-	public static Element meter(Iterable<Element> tags) {
+	public static Element meter(List<Element> tags) {
 		return nonVoid("meter", tags);
 	}
 
-	public static Element meter(Attribute attr, Iterable<Element> tags) {
+	public static Element meter(Attribute attr, List<Element> tags) {
 		return nonVoid("meter", attr, tags);
 	}
 
@@ -1665,11 +1667,11 @@ public class HtmlHelper {
 		return nonVoid("nav", tag);
 	}
 
-	public static Element nav(Iterable<Element> tags) {
+	public static Element nav(List<Element> tags) {
 		return nonVoid("nav", tags);
 	}
 
-	public static Element nav(Attribute attr, Iterable<Element> tags) {
+	public static Element nav(Attribute attr, List<Element> tags) {
 		return nonVoid("nav", attr, tags);
 	}
 
@@ -1693,11 +1695,11 @@ public class HtmlHelper {
 		return nonVoid("noscript", tag);
 	}
 
-	public static Element noscript(Iterable<Element> tags) {
+	public static Element noscript(List<Element> tags) {
 		return nonVoid("noscript", tags);
 	}
 
-	public static Element noscript(Attribute attr, Iterable<Element> tags) {
+	public static Element noscript(Attribute attr, List<Element> tags) {
 		return nonVoid("noscript", attr, tags);
 	}
 
@@ -1721,11 +1723,11 @@ public class HtmlHelper {
 		return nonVoid("object", tag);
 	}
 
-	public static Element object(Iterable<Element> tags) {
+	public static Element object(List<Element> tags) {
 		return nonVoid("object", tags);
 	}
 
-	public static Element object(Attribute attr, Iterable<Element> tags) {
+	public static Element object(Attribute attr, List<Element> tags) {
 		return nonVoid("object", attr, tags);
 	}
 
@@ -1749,11 +1751,11 @@ public class HtmlHelper {
 		return nonVoid("ol", tag);
 	}
 
-	public static Element ol(Iterable<Element> tags) {
+	public static Element ol(List<Element> tags) {
 		return nonVoid("ol", tags);
 	}
 
-	public static Element ol(Attribute attr, Iterable<Element> tags) {
+	public static Element ol(Attribute attr, List<Element> tags) {
 		return nonVoid("ol", attr, tags);
 	}
 
@@ -1777,11 +1779,11 @@ public class HtmlHelper {
 		return nonVoid("optgroup", tag);
 	}
 
-	public static Element optgroup(Iterable<Element> tags) {
+	public static Element optgroup(List<Element> tags) {
 		return nonVoid("optgroup", tags);
 	}
 
-	public static Element optgroup(Attribute attr, Iterable<Element> tags) {
+	public static Element optgroup(Attribute attr, List<Element> tags) {
 		return nonVoid("optgroup", attr, tags);
 	}
 
@@ -1805,11 +1807,11 @@ public class HtmlHelper {
 		return nonVoid("option", tag);
 	}
 
-	public static Element option(Iterable<Element> tags) {
+	public static Element option(List<Element> tags) {
 		return nonVoid("option", tags);
 	}
 
-	public static Element option(Attribute attr, Iterable<Element> tags) {
+	public static Element option(Attribute attr, List<Element> tags) {
 		return nonVoid("option", attr, tags);
 	}
 
@@ -1833,11 +1835,11 @@ public class HtmlHelper {
 		return nonVoid("output", tag);
 	}
 
-	public static Element output(Iterable<Element> tags) {
+	public static Element output(List<Element> tags) {
 		return nonVoid("output", tags);
 	}
 
-	public static Element output(Attribute attr, Iterable<Element> tags) {
+	public static Element output(Attribute attr, List<Element> tags) {
 		return nonVoid("output", attr, tags);
 	}
 
@@ -1861,11 +1863,11 @@ public class HtmlHelper {
 		return nonVoid("p", tag);
 	}
 
-	public static Element p(Iterable<Element> tags) {
+	public static Element p(List<Element> tags) {
 		return nonVoid("p", tags);
 	}
 
-	public static Element p(Attribute attr, Iterable<Element> tags) {
+	public static Element p(Attribute attr, List<Element> tags) {
 		return nonVoid("p", attr, tags);
 	}
 
@@ -1889,11 +1891,11 @@ public class HtmlHelper {
 		return nonVoid("pre", tag);
 	}
 
-	public static Element pre(Iterable<Element> tags) {
+	public static Element pre(List<Element> tags) {
 		return nonVoid("pre", tags);
 	}
 
-	public static Element pre(Attribute attr, Iterable<Element> tags) {
+	public static Element pre(Attribute attr, List<Element> tags) {
 		return nonVoid("pre", attr, tags);
 	}
 
@@ -1917,11 +1919,11 @@ public class HtmlHelper {
 		return nonVoid("progress", tag);
 	}
 
-	public static Element progress(Iterable<Element> tags) {
+	public static Element progress(List<Element> tags) {
 		return nonVoid("progress", tags);
 	}
 
-	public static Element progress(Attribute attr, Iterable<Element> tags) {
+	public static Element progress(Attribute attr, List<Element> tags) {
 		return nonVoid("progress", attr, tags);
 	}
 
@@ -1945,11 +1947,11 @@ public class HtmlHelper {
 		return nonVoid("q", tag);
 	}
 
-	public static Element q(Iterable<Element> tags) {
+	public static Element q(List<Element> tags) {
 		return nonVoid("q", tags);
 	}
 
-	public static Element q(Attribute attr, Iterable<Element> tags) {
+	public static Element q(Attribute attr, List<Element> tags) {
 		return nonVoid("q", attr, tags);
 	}
 
@@ -1973,11 +1975,11 @@ public class HtmlHelper {
 		return nonVoid("rb", tag);
 	}
 
-	public static Element rb(Iterable<Element> tags) {
+	public static Element rb(List<Element> tags) {
 		return nonVoid("rb", tags);
 	}
 
-	public static Element rb(Attribute attr, Iterable<Element> tags) {
+	public static Element rb(Attribute attr, List<Element> tags) {
 		return nonVoid("rb", attr, tags);
 	}
 
@@ -2001,11 +2003,11 @@ public class HtmlHelper {
 		return nonVoid("rp", tag);
 	}
 
-	public static Element rp(Iterable<Element> tags) {
+	public static Element rp(List<Element> tags) {
 		return nonVoid("rp", tags);
 	}
 
-	public static Element rp(Attribute attr, Iterable<Element> tags) {
+	public static Element rp(Attribute attr, List<Element> tags) {
 		return nonVoid("rp", attr, tags);
 	}
 
@@ -2029,11 +2031,11 @@ public class HtmlHelper {
 		return nonVoid("rt", tag);
 	}
 
-	public static Element rt(Iterable<Element> tags) {
+	public static Element rt(List<Element> tags) {
 		return nonVoid("rt", tags);
 	}
 
-	public static Element rt(Attribute attr, Iterable<Element> tags) {
+	public static Element rt(Attribute attr, List<Element> tags) {
 		return nonVoid("rt", attr, tags);
 	}
 
@@ -2057,11 +2059,11 @@ public class HtmlHelper {
 		return nonVoid("rtc", tag);
 	}
 
-	public static Element rtc(Iterable<Element> tags) {
+	public static Element rtc(List<Element> tags) {
 		return nonVoid("rtc", tags);
 	}
 
-	public static Element rtc(Attribute attr, Iterable<Element> tags) {
+	public static Element rtc(Attribute attr, List<Element> tags) {
 		return nonVoid("rtc", attr, tags);
 	}
 
@@ -2085,11 +2087,11 @@ public class HtmlHelper {
 		return nonVoid("ruby", tag);
 	}
 
-	public static Element ruby(Iterable<Element> tags) {
+	public static Element ruby(List<Element> tags) {
 		return nonVoid("ruby", tags);
 	}
 
-	public static Element ruby(Attribute attr, Iterable<Element> tags) {
+	public static Element ruby(Attribute attr, List<Element> tags) {
 		return nonVoid("ruby", attr, tags);
 	}
 
@@ -2113,11 +2115,11 @@ public class HtmlHelper {
 		return nonVoid("s", tag);
 	}
 
-	public static Element s(Iterable<Element> tags) {
+	public static Element s(List<Element> tags) {
 		return nonVoid("s", tags);
 	}
 
-	public static Element s(Attribute attr, Iterable<Element> tags) {
+	public static Element s(Attribute attr, List<Element> tags) {
 		return nonVoid("s", attr, tags);
 	}
 
@@ -2141,11 +2143,11 @@ public class HtmlHelper {
 		return nonVoid("samp", tag);
 	}
 
-	public static Element samp(Iterable<Element> tags) {
+	public static Element samp(List<Element> tags) {
 		return nonVoid("samp", tags);
 	}
 
-	public static Element samp(Attribute attr, Iterable<Element> tags) {
+	public static Element samp(Attribute attr, List<Element> tags) {
 		return nonVoid("samp", attr, tags);
 	}
 
@@ -2169,11 +2171,11 @@ public class HtmlHelper {
 		return nonVoid("script", tag);
 	}
 
-	public static Element script(Iterable<Element> tags) {
+	public static Element script(List<Element> tags) {
 		return nonVoid("script", tags);
 	}
 
-	public static Element script(Attribute attr, Iterable<Element> tags) {
+	public static Element script(Attribute attr, List<Element> tags) {
 		return nonVoid("script", attr, tags);
 	}
 
@@ -2197,11 +2199,11 @@ public class HtmlHelper {
 		return nonVoid("section", tag);
 	}
 
-	public static Element section(Iterable<Element> tags) {
+	public static Element section(List<Element> tags) {
 		return nonVoid("section", tags);
 	}
 
-	public static Element section(Attribute attr, Iterable<Element> tags) {
+	public static Element section(Attribute attr, List<Element> tags) {
 		return nonVoid("section", attr, tags);
 	}
 
@@ -2225,11 +2227,11 @@ public class HtmlHelper {
 		return nonVoid("select", tag);
 	}
 
-	public static Element select(Iterable<Element> tags) {
+	public static Element select(List<Element> tags) {
 		return nonVoid("select", tags);
 	}
 
-	public static Element select(Attribute attr, Iterable<Element> tags) {
+	public static Element select(Attribute attr, List<Element> tags) {
 		return nonVoid("select", attr, tags);
 	}
 
@@ -2253,11 +2255,11 @@ public class HtmlHelper {
 		return nonVoid("small", tag);
 	}
 
-	public static Element small(Iterable<Element> tags) {
+	public static Element small(List<Element> tags) {
 		return nonVoid("small", tags);
 	}
 
-	public static Element small(Attribute attr, Iterable<Element> tags) {
+	public static Element small(Attribute attr, List<Element> tags) {
 		return nonVoid("small", attr, tags);
 	}
 
@@ -2281,11 +2283,11 @@ public class HtmlHelper {
 		return nonVoid("span", tag);
 	}
 
-	public static Element span(Iterable<Element> tags) {
+	public static Element span(List<Element> tags) {
 		return nonVoid("span", tags);
 	}
 
-	public static Element span(Attribute attr, Iterable<Element> tags) {
+	public static Element span(Attribute attr, List<Element> tags) {
 		return nonVoid("span", attr, tags);
 	}
 
@@ -2309,11 +2311,11 @@ public class HtmlHelper {
 		return nonVoid("strong", tag);
 	}
 
-	public static Element strong(Iterable<Element> tags) {
+	public static Element strong(List<Element> tags) {
 		return nonVoid("strong", tags);
 	}
 
-	public static Element strong(Attribute attr, Iterable<Element> tags) {
+	public static Element strong(Attribute attr, List<Element> tags) {
 		return nonVoid("strong", attr, tags);
 	}
 
@@ -2337,11 +2339,11 @@ public class HtmlHelper {
 		return nonVoid("style", tag);
 	}
 
-	public static Element style(Iterable<Element> tags) {
+	public static Element style(List<Element> tags) {
 		return nonVoid("style", tags);
 	}
 
-	public static Element style(Attribute attr, Iterable<Element> tags) {
+	public static Element style(Attribute attr, List<Element> tags) {
 		return nonVoid("style", attr, tags);
 	}
 
@@ -2365,11 +2367,11 @@ public class HtmlHelper {
 		return nonVoid("sub", tag);
 	}
 
-	public static Element sub(Iterable<Element> tags) {
+	public static Element sub(List<Element> tags) {
 		return nonVoid("sub", tags);
 	}
 
-	public static Element sub(Attribute attr, Iterable<Element> tags) {
+	public static Element sub(Attribute attr, List<Element> tags) {
 		return nonVoid("sub", attr, tags);
 	}
 
@@ -2393,11 +2395,11 @@ public class HtmlHelper {
 		return nonVoid("sup", tag);
 	}
 
-	public static Element sup(Iterable<Element> tags) {
+	public static Element sup(List<Element> tags) {
 		return nonVoid("sup", tags);
 	}
 
-	public static Element sup(Attribute attr, Iterable<Element> tags) {
+	public static Element sup(Attribute attr, List<Element> tags) {
 		return nonVoid("sup", attr, tags);
 	}
 
@@ -2421,11 +2423,11 @@ public class HtmlHelper {
 		return nonVoid("table", tag);
 	}
 
-	public static Element table(Iterable<Element> tags) {
+	public static Element table(List<Element> tags) {
 		return nonVoid("table", tags);
 	}
 
-	public static Element table(Attribute attr, Iterable<Element> tags) {
+	public static Element table(Attribute attr, List<Element> tags) {
 		return nonVoid("table", attr, tags);
 	}
 
@@ -2449,11 +2451,11 @@ public class HtmlHelper {
 		return nonVoid("tbody", tag);
 	}
 
-	public static Element tbody(Iterable<Element> tags) {
+	public static Element tbody(List<Element> tags) {
 		return nonVoid("tbody", tags);
 	}
 
-	public static Element tbody(Attribute attr, Iterable<Element> tags) {
+	public static Element tbody(Attribute attr, List<Element> tags) {
 		return nonVoid("tbody", attr, tags);
 	}
 
@@ -2477,11 +2479,11 @@ public class HtmlHelper {
 		return nonVoid("td", tag);
 	}
 
-	public static Element td(Iterable<Element> tags) {
+	public static Element td(List<Element> tags) {
 		return nonVoid("td", tags);
 	}
 
-	public static Element td(Attribute attr, Iterable<Element> tags) {
+	public static Element td(Attribute attr, List<Element> tags) {
 		return nonVoid("td", attr, tags);
 	}
 
@@ -2505,11 +2507,11 @@ public class HtmlHelper {
 		return nonVoid("template", tag);
 	}
 
-	public static Element template(Iterable<Element> tags) {
+	public static Element template(List<Element> tags) {
 		return nonVoid("template", tags);
 	}
 
-	public static Element template(Attribute attr, Iterable<Element> tags) {
+	public static Element template(Attribute attr, List<Element> tags) {
 		return nonVoid("template", attr, tags);
 	}
 
@@ -2533,11 +2535,11 @@ public class HtmlHelper {
 		return nonVoid("textarea", tag);
 	}
 
-	public static Element textarea(Iterable<Element> tags) {
+	public static Element textarea(List<Element> tags) {
 		return nonVoid("textarea", tags);
 	}
 
-	public static Element textarea(Attribute attr, Iterable<Element> tags) {
+	public static Element textarea(Attribute attr, List<Element> tags) {
 		return nonVoid("textarea", attr, tags);
 	}
 
@@ -2561,11 +2563,11 @@ public class HtmlHelper {
 		return nonVoid("tfoot", tag);
 	}
 
-	public static Element tfoot(Iterable<Element> tags) {
+	public static Element tfoot(List<Element> tags) {
 		return nonVoid("tfoot", tags);
 	}
 
-	public static Element tfoot(Attribute attr, Iterable<Element> tags) {
+	public static Element tfoot(Attribute attr, List<Element> tags) {
 		return nonVoid("tfoot", attr, tags);
 	}
 
@@ -2589,11 +2591,11 @@ public class HtmlHelper {
 		return nonVoid("th", tag);
 	}
 
-	public static Element th(Iterable<Element> tags) {
+	public static Element th(List<Element> tags) {
 		return nonVoid("th", tags);
 	}
 
-	public static Element th(Attribute attr, Iterable<Element> tags) {
+	public static Element th(Attribute attr, List<Element> tags) {
 		return nonVoid("th", attr, tags);
 	}
 
@@ -2617,11 +2619,11 @@ public class HtmlHelper {
 		return nonVoid("thead", tag);
 	}
 
-	public static Element thead(Iterable<Element> tags) {
+	public static Element thead(List<Element> tags) {
 		return nonVoid("thead", tags);
 	}
 
-	public static Element thead(Attribute attr, Iterable<Element> tags) {
+	public static Element thead(Attribute attr, List<Element> tags) {
 		return nonVoid("thead", attr, tags);
 	}
 
@@ -2645,11 +2647,11 @@ public class HtmlHelper {
 		return nonVoid("time", tag);
 	}
 
-	public static Element time(Iterable<Element> tags) {
+	public static Element time(List<Element> tags) {
 		return nonVoid("time", tags);
 	}
 
-	public static Element time(Attribute attr, Iterable<Element> tags) {
+	public static Element time(Attribute attr, List<Element> tags) {
 		return nonVoid("time", attr, tags);
 	}
 
@@ -2673,11 +2675,11 @@ public class HtmlHelper {
 		return nonVoid("title", tag);
 	}
 
-	public static Element title(Iterable<Element> tags) {
+	public static Element title(List<Element> tags) {
 		return nonVoid("title", tags);
 	}
 
-	public static Element title(Attribute attr, Iterable<Element> tags) {
+	public static Element title(Attribute attr, List<Element> tags) {
 		return nonVoid("title", attr, tags);
 	}
 
@@ -2701,11 +2703,11 @@ public class HtmlHelper {
 		return nonVoid("tr", tag);
 	}
 
-	public static Element tr(Iterable<Element> tags) {
+	public static Element tr(List<Element> tags) {
 		return nonVoid("tr", tags);
 	}
 
-	public static Element tr(Attribute attr, Iterable<Element> tags) {
+	public static Element tr(Attribute attr, List<Element> tags) {
 		return nonVoid("tr", attr, tags);
 	}
 
@@ -2729,11 +2731,11 @@ public class HtmlHelper {
 		return nonVoid("u", tag);
 	}
 
-	public static Element u(Iterable<Element> tags) {
+	public static Element u(List<Element> tags) {
 		return nonVoid("u", tags);
 	}
 
-	public static Element u(Attribute attr, Iterable<Element> tags) {
+	public static Element u(Attribute attr, List<Element> tags) {
 		return nonVoid("u", attr, tags);
 	}
 
@@ -2757,11 +2759,11 @@ public class HtmlHelper {
 		return nonVoid("ul", tag);
 	}
 
-	public static Element ul(Iterable<Element> tags) {
+	public static Element ul(List<Element> tags) {
 		return nonVoid("ul", tags);
 	}
 
-	public static Element ul(Attribute attr, Iterable<Element> tags) {
+	public static Element ul(Attribute attr, List<Element> tags) {
 		return nonVoid("ul", attr, tags);
 	}
 
@@ -2785,11 +2787,11 @@ public class HtmlHelper {
 		return nonVoid("var", tag);
 	}
 
-	public static Element var(Iterable<Element> tags) {
+	public static Element var(List<Element> tags) {
 		return nonVoid("var", tags);
 	}
 
-	public static Element var(Attribute attr, Iterable<Element> tags) {
+	public static Element var(Attribute attr, List<Element> tags) {
 		return nonVoid("var", attr, tags);
 	}
 
@@ -2813,11 +2815,11 @@ public class HtmlHelper {
 		return nonVoid("video", tag);
 	}
 
-	public static Element video(Iterable<Element> tags) {
+	public static Element video(List<Element> tags) {
 		return nonVoid("video", tags);
 	}
 
-	public static Element video(Attribute attr, Iterable<Element> tags) {
+	public static Element video(Attribute attr, List<Element> tags) {
 		return nonVoid("video", attr, tags);
 	}
 

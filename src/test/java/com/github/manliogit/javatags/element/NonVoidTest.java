@@ -1,5 +1,7 @@
 package com.github.manliogit.javatags.element;
 
+import static com.github.manliogit.javatags.lang.HtmlHelper.div;
+import static com.github.manliogit.javatags.lang.HtmlHelper.span;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
@@ -52,5 +54,33 @@ public class NonVoidTest {
 	@Test
 	public void siblingTags() throws Exception {
 		assertThat(new Group(new Text("<!DOCTYPE html>"), new NonVoid("html")).render(), is("<!DOCTYPE html><html></html>"));
+	}
+	
+	@Test
+	public void equalitytIgnoresAttributesOrder() {
+		
+		Element div = new NonVoid("div", new Attribute("a -> b", "c -> d"));
+		Element otherDiv = new NonVoid("div", new Attribute("c -> d", "a -> b"));
+		
+		assertThat(div, is(otherDiv));
+	}
+	
+	@Test
+	public void addChildren() {
+		
+		Element nonVoid = new NonVoid("div").
+							add(new NonVoid("span")).
+							add(new NonVoid("span")).
+							add(new NonVoid("span").add(new NonVoid("div")));
+			
+		Element expected = div(
+				             span(),
+				             span(),
+				             span(
+				               div()
+				             )
+				           );
+		
+		assertThat(nonVoid, is(expected));
 	}
 }

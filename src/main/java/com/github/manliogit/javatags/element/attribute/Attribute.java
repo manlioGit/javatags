@@ -3,6 +3,7 @@ package com.github.manliogit.javatags.element.attribute;
 import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,6 +65,58 @@ public class Attribute {
 		return this;
 	}
 	
+	public Attribute remove(String key) {
+		_data.remove(key);
+		return this;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((_data == null) ? 0 : _data.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		Attribute other = (Attribute) obj;
+		if (_data == null) {
+			if (other._data != null) {
+				return false;
+			}
+		} else if (!_data.equals(other._data))  {
+			for (String value : _data.values()) {
+				for (String otherValue : other._data.values()) {
+					String[] split = value.split("\\s");
+					String[] otherSplit = otherValue.split("\\s");
+					Arrays.sort(split);
+					Arrays.sort(otherSplit);
+					
+					if(!Arrays.equals(split, otherSplit)) {
+						return false;
+					}
+				}
+			}
+		}
+		
+		return true;
+	}
+	
+	@Override
+	public String toString() {
+		return _data.toString();
+	}
+
 	private String join(List<String> values) {
 		String result = "";
 		for (String string : values) {
@@ -71,7 +124,7 @@ public class Attribute {
 		}
 		return result.trim();
 	}
-
+	
 	private String fill(String key, String value) {
 		return _data.containsKey(key) 
 				? _data.get(key) + " " + value 

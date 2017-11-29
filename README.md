@@ -40,15 +40,15 @@ So you can add dependency to your pom.xml:
 <dependency>
   <groupId>com.github.manliogit</groupId>
   <artifactId>javatags</artifactId>
-  <version>0.4.2</version>
+  <version>0.4.3</version>
 </dependency>
 ```
 
-for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.4.2|jar) 
+for other build tools, see [the central repository](http://search.maven.org/#artifactdetails|com.github.manliogit|javatags|0.4.3|jar) 
 
 ## Online converter
 
-To convert html to JavaTags format try [online converter](http://javatagsconverter-booklet.rhcloud.com)
+To convert html to JavaTags format try [online converter](http://javatagsconverter.herokuapp.com)
 
 ## Examples
 
@@ -127,7 +127,7 @@ renders
 class='navbar fa fa-up' style='border: 0;'
 ```
 
-An attribute can be modified with remove method, using key-value or Attribute overload
+An attribute can be modified with remove method, using key-value, Attribute overload or key
 
 ```java
 attr("class -> .some fa fa-up", "xxx -> fa fa-up").
@@ -140,6 +140,17 @@ renders
 
 ```html
 class='.some fa' xxx=''
+```
+
+```java
+attr("class -> .some fa fa-up", "xxx -> fa fa-up").
+	remove("class");
+```
+
+renders
+
+```html
+xxx='fa fa-up'
 ```
 
 see [unit tests](https://github.com/manlioGit/javatags/blob/master/src/test/java/com/github/manliogit/javatags/element/attribute/AttributeTest.java) for other examples
@@ -212,12 +223,38 @@ for (String component : asList("a", "b", "c")) {
 }
 
 ul(
-	group(list)
+  group(list)
 );
 ...
 
 ```
 
+You can also use `add` method to add children/sibling to a NonVoid/Void element respectively, for example: 
+
+```java
+...
+Element g = group();
+for (String component : asList("a", "b", "c")) {
+	g.add(li(text(component)));
+}
+
+...
+	
+Element ul = ul();
+for (String component : asList("a", "b", "c")) {
+	ul.add(li(text(component)));
+}
+```
+
+Elements are equal ignoring attribute order definition, for example:
+
+```java
+...
+assertThat(attr("id -> 123", "class -> fa fa-up"), is(attr("class -> fa fa-up", "id -> 123")));
+assertThat(attr("class -> fa fa-up"), is(attr("class -> fa-up fa")));
+```
+
+see [unit tests](https://github.com/manlioGit/javatags/tree/master/src/test/java/com/github/manliogit/javatags/element) for other examples
 
 ### bootstrap [Gentelella Theme](https://github.com/puikinsh/gentelella) :
 
