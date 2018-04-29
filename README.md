@@ -102,23 +102,23 @@ attr(asList("class -> navbar", "style -> border: 0;"));
 An attribute can be build fluently with add method, using key-value or Attribute overload
 
 ```java
-attr().
-	add("class", "navbar").
-	add("style", "border: 0;")
-	...
+attr()
+  .add("class", "navbar")
+  . add("style", "border: 0;")
+  ...
 	
-attr().
-	add(attr("class -> navbar")).
-	add(attr("style -> border: 0;")
-	...
+attr()
+  .add(attr("class -> navbar"))
+  .add(attr("style -> border: 0;")
+  ...
 ```
 
 `add method` appends values if already defined for an attribute 
 
 ```java
-attr("class -> navbar").
-	add("class", "fa fa-up").
-	add("style", "border: 0;");
+attr("class -> navbar")
+  .add("class", "fa fa-up")
+  .add("style", "border: 0;");
 ```
 
 renders
@@ -130,10 +130,10 @@ class='navbar fa fa-up' style='border: 0;'
 An attribute can be modified with remove method, using key-value, Attribute overload or key
 
 ```java
-attr("class -> .some fa fa-up", "xxx -> fa fa-up").
-	remove("class", "fa-up").
-	remove("xxx", "fa").
-	remove("xxx", "fa-up");
+attr("class -> .some fa fa-up", "xxx -> fa fa-up")
+  .remove("class", "fa-up")
+  .remove("xxx", "fa")
+  .remove("xxx", "fa-up");
 ```
 
 renders
@@ -143,8 +143,7 @@ class='.some fa' xxx=''
 ```
 
 ```java
-attr("class -> .some fa fa-up", "xxx -> fa fa-up").
-	remove("class");
+attr("class -> .some fa fa-up", "xxx -> fa fa-up").remove("class");
 ```
 
 renders
@@ -162,32 +161,32 @@ An example of page layout:
 ```java
 public class Layout{
 
-	private final String _title;
-	private final Element _bodyContent;
+    private final String _title;
+    private final Element _bodyContent;
 	
-	public Layout(String title, Element bodyContent) {
-		_title = title;
-		_bodyContent = bodyContent;
-	}
+    public Layout(String title, Element bodyContent) {
+        _title = title;
+	_bodyContent = bodyContent;
+    }
 	
-	public Element build() {
-		return 
-			html5(
-				 head(
-					 meta(attr("charset -> utf-8")),
-					 meta(attr("http-equiv -> X-UA-Compatible", "content -> IE=edge")),
-					 meta(attr("name -> viewport", "content -> width=device-width, initial-scale=1")),
-					 title(_title),
-					 link(attr("rel -> stylesheet", "href -> /css/bootstrap.min.css")),
-					 link(attr("rel -> stylesheet", "href -> /css/app.css"))
-				 ),
-				 body(
-					 _bodyContent,
-					 script(attr("src -> /js/jquery.min.js")),
-					 script(attr("src -> /js/bootstrap.min.js"))
-			     )
-			);
-	}
+    public Element build() {
+        return 
+	    html5(
+	      head(
+	        meta(attr("charset -> utf-8")),
+		meta(attr("http-equiv -> X-UA-Compatible", "content -> IE=edge")),
+		meta(attr("name -> viewport", "content -> width=device-width, initial-scale=1")),
+		title(_title),
+		link(attr("rel -> stylesheet", "href -> /css/bootstrap.min.css")),
+		link(attr("rel -> stylesheet", "href -> /css/app.css"))
+	      ),
+	      body(
+	        _bodyContent,
+                script(attr("src -> /js/jquery.min.js")),
+	        script(attr("src -> /js/bootstrap.min.js"))
+	      )
+	    );
+     }
 }
 ```
 
@@ -219,7 +218,7 @@ To render list of Elements use `group` method, for example:
 ...
 List<Element> list = new ArrayList<Element>();
 for (String component : asList("a", "b", "c")) {
-	list.add(li(text(component)));
+    list.add(li(text(component)));
 }
 
 ul(
@@ -235,15 +234,27 @@ You can also use `add` method to add children/sibling to a NonVoid/Void element 
 ...
 Element g = group();
 for (String component : asList("a", "b", "c")) {
-	g.add(li(text(component)));
+    g.add(li(text(component)));
 }
 
 ...
 	
 Element ul = ul();
 for (String component : asList("a", "b", "c")) {
-	ul.add(li(text(component)));
+    ul.add(li(text(component)));
 }
+```
+Or in a builder/fluent syntax way:
+
+```
+ul()
+  .add(li("item 1"))
+  .add(li("item 2"))
+  .add(li("item 3"))	
+  
+div(attr("class -> xxx"))
+  .add(span("content"))
+  .add(p("other content"))
 ```
 
 Elements are equal ignoring attribute order definition, for example:
