@@ -104,7 +104,7 @@ An attribute can be build fluently with add method, using key-value or Attribute
 ```java
 attr()
   .add("class", "navbar")
-  . add("style", "border: 0;")
+  .add("style", "border: 0;")
   ...
 	
 attr()
