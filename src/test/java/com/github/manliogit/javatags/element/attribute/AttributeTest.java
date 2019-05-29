@@ -1,8 +1,8 @@
 package com.github.manliogit.javatags.element.attribute;
 
-import static com.github.manliogit.javatags.lang.HtmlHelper.attr;
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static com.github.manliogit.javatags.lang.HtmlHelper.*;
+import static org.hamcrest.core.Is.*;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -105,4 +105,9 @@ public class AttributeTest {
 		assertThat(attr("id -> 123", "class -> fa fa-up"), is(attr("class -> fa fa-up", "id -> 123")));
 		assertThat(attr("class -> fa fa-up"), is(attr("class -> fa-up fa")));
 	}
+	
+	@Test
+    public void apostrophValuesIsSanitized() throws Exception {
+        assertThat(attr("id -> 1'000", "value -> 1'0'0").render(), is("id='1&#x27;000' value='1&#x27;0&#x27;0'"));
+    }
 }

@@ -1,6 +1,6 @@
 package com.github.manliogit.javatags.element.attribute;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,7 +31,7 @@ public class Attribute {
 	public String render() {
 		String result = "";
 		for (Entry<String, String> pair : _data.entrySet()) {
-			result += pair.getKey() + "=" + "'" + pair.getValue() + "'" + " ";
+			result += pair.getKey() + "=" + "'" + sanitize(pair.getValue()) + "'" + " ";
 		}
 		
 		return result.trim();
@@ -142,4 +142,8 @@ public class Attribute {
 	private boolean isBlank(String string) {
 		return string == null || string.trim().isEmpty();
 	}
+	
+	private String sanitize(String value) {
+        return value.replaceAll("'", "&#x27;");
+    }
 }
