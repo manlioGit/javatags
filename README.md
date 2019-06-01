@@ -31,7 +31,7 @@ in html:
 
 ## Getting started:
 
-### Requires JDK 1.7+
+### Requires JDK 1.6+
 
 JavaTags is hosted on [Maven Central](http://search.maven.org/). 
 So you can add dependency to your pom.xml:
