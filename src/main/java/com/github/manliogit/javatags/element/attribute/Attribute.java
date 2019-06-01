@@ -11,7 +11,9 @@ import java.util.Map.Entry;
 
 public class Attribute {
 
+	private static final String UNICODE_APOSTROPHE = "&#x27;";
 	private static final String REGEX = "\\s*->\\s*";
+	
 	private final Map<String, String> _data;
 	
 	public Attribute(String...comp) {
@@ -144,6 +146,6 @@ public class Attribute {
 	}
 	
 	private String sanitize(String value) {
-        return value.replaceAll("'", "&#x27;");
+        return value.replaceAll("'", UNICODE_APOSTROPHE);
     }
 }
