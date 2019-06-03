@@ -110,4 +110,21 @@ public class AttributeTest {
     public void apostrophValuesIsSanitized() throws Exception {
         assertThat(attr("id -> 1'000", "value -> 1'0'0").render(), is("id='1&#x27;000' value='1&#x27;0&#x27;0'"));
     }
+	
+	@Test
+    public void notSanitizeNullValues() throws Exception {
+
+        Attribute attribute = new Attribute()
+            .add("id", null)
+            .add("", "fa fa-up")
+            .add(null, "fa fa-down")
+            .add("weird thing", "");
+
+        Attribute otherAttribute = new Attribute().add(attribute);
+
+        String expected = "id='' ='fa fa-up' null='fa fa-down' weird thing=''";
+
+        assertThat(attribute.render(), is(expected));
+        assertThat(otherAttribute.render(), is(expected));
+    }	
 }

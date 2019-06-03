@@ -25,32 +25,23 @@ public class Attribute {
 		for (String string : comp) {
 			if(!isBlank(string)){
 				String[] split = string.split(REGEX);
-				_data.put(valueAt(split, 0), valueAt(split, 1));
+				add(valueAt(split, 0), valueAt(split, 1));
 			}
 		}
 	}
-
-	public String render() {
-		String result = "";
-		for (Entry<String, String> pair : _data.entrySet()) {
-			result += pair.getKey() + "=" + "'" + sanitize(pair.getValue()) + "'" + " ";
-		}
-		
-		return result.trim();
-	}
-
+	
 	public Attribute add(String key, String value) {
-		_data.put(key, fill(key, value));
-		return this;
+	    _data.put(key, fill(key, value));
+	    return this;
 	}
 	
 	public Attribute add(Attribute other) {
-		for (Entry<String, String> pair : other._data.entrySet()) {
-			add(pair.getKey(), pair.getValue());
-		}
-		return this;
+	    for (Entry<String, String> pair : other._data.entrySet()) {
+	        add(pair.getKey(), pair.getValue());
+	    }
+	    return this;
 	}
-	
+
 	public Attribute remove(String key, String value) {
 		if(_data.containsKey(key)){
 			List<String> values = new ArrayList<String>(asList(_data.get(key).split("\\s"))); 
@@ -71,6 +62,15 @@ public class Attribute {
 		_data.remove(key);
 		return this;
 	}
+	
+    public String render() {
+        String result = "";
+        for (Entry<String, String> pair : _data.entrySet()) {
+            result += pair.getKey() + "=" + "'" + sanitize(pair.getValue()) + "'" + " ";
+        }
+        
+        return result.trim();
+    }
 	
 	@Override
 	public int hashCode() {
@@ -146,6 +146,6 @@ public class Attribute {
 	}
 	
 	private String sanitize(String value) {
-        return value.replaceAll("'", UNICODE_APOSTROPHE);
+        return value == null ? "" : value.replaceAll("'", UNICODE_APOSTROPHE);
     }
 }
