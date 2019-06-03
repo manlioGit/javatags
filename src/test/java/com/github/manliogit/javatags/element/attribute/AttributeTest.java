@@ -112,7 +112,7 @@ public class AttributeTest {
     }
 	
 	@Test
-    public void notSanitizeNullValues() throws Exception {
+    public void dontSanitizeNullValues() throws Exception {
 
         Attribute attribute = new Attribute()
             .add("id", null)
