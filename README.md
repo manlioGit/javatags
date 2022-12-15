@@ -48,7 +48,8 @@ for other build tools, see [the central repository](http://search.maven.org/#art
 
 ## Online converter
 
-To convert html to JavaTags format try [online converter](http://javatagsconverter.herokuapp.com)
+~~To convert html to JavaTags format try [online converter](http://javatagsconverter.herokuapp.com).~~
+Given heroku plan changes, follow docker instruction reported [here](https://github.com/manlioGit/javatagsconverter#local-run)
 
 ## Examples
 
